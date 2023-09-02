@@ -1,4 +1,3 @@
-
 <?php // thumb img url
 $thumbUrl = '';
 
@@ -7,30 +6,7 @@ if (get_the_post_thumbnail_url()) {
 }
 
 // page type
-$pageType       = '';
-$currentUrl     = $_SERVER['REQUEST_URI'];
-
-if (is_front_page()) {
-	$pageType = ' hero_block_wrap--home';
-}
-else if (is_product()) {
-	$pageType = ' hero_block_wrap--product';
-}
-else if (is_category()) {
-	$pageType = ' hero_block_wrap--category';
-}
-else if ($currentUrl == '/kontakty/') {
-	$pageType = ' hero_block_wrap--contacts';
-}
-else if ($currentUrl == '/novostrojki/') {
-	$pageType = ' hero_block_wrap--new_buildings';
-}
-else if ($currentUrl == '/zarubezhnaya/') {
-	$pageType = ' hero_block_wrap--foreign';
-}
-else if ($currentUrl == '/o-kompanii/') {
-	$pageType = ' hero_block_wrap--about';
-} ?>
+$currentUrl = $_SERVER['REQUEST_URI']; ?>
 
 <div class="hero_block_wrap">
 	<div class="hero_block<?php if (!empty($thumbUrl) && is_product()) { ?> js-img-bg<?php } ?>" <?php if (!empty($thumbUrl) && is_product()) { ?>data-src="<?= $thumbUrl; ?>"<?php } ?>>

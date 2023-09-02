@@ -92,7 +92,6 @@
 
 		input {
 			&[type="text"] {
-				background-color: $c_menu_bg;
 				border-bottom: 1px solid #fff;
 				color: #fff;
 			}
@@ -131,7 +130,6 @@
 
 		.popup {
 			&__content_wrap {
-				background-color: $c_menu_bg;
 				max-width: 570px;
 				padding: 36px 70px;
 				width: 100%;
@@ -256,10 +254,6 @@
 		}
 
 		.popup {
-			&__content {
-				background-color: $c_menu_bg;;
-			}
-
 			&__content_wrap {
 				padding: 40px 70px;
 

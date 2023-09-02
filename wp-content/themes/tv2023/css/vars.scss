@@ -8,18 +8,13 @@ $icons:             $i + '/icons';
 $fonts:             $themeFolder + '/fonts';
 
 // colors
-$c_content_bg:      #f8f8f8;
-$c_copyright:       #9d9da1;
-$c_error:           #de68ca;
-$c_filter_bg:       #d9d9d9;
-$c_filter_border:   #7a7a7a;
-$c_filter_title:    #7f7f7f;
-$c_hr:              #cbcbcb;
-$c_img_bg:          #7c757a;
-$c_main:            #ddb472;
-$c_menu_bg:         #2b2b33;
-$c_quote_sign:      #9e9ea1;
-$c_text:            #2c2c2c;
+$c_error:           #d33f49;
+$c_info:            #eff0d1;
+$c_main:            #77ba99;
+$c_secondary:       #d7c0d0;
+$c_text:            #262730;
+
+
 
 $transition:        all .3s ease-in-out;
 
@@ -31,16 +26,15 @@ $mobile_s:          'only screen and (max-width: 400px)';
 $tablet:            'only screen and (max-width: 1023px)';
 
 // fonts
-$font_arsenica:     'Arsenica-Regular',     Arial, Helvetica, sans-serif;
 $font_main:         'Montserrat',           Arial, Helvetica, sans-serif;
 $font_montserrat:   'Montserrat',           Arial, Helvetica, sans-serif;
 
 // Arsenica-Regular
-@font-face {
-	font-family: 'Arsenica-Regular';
-	src: url($fonts + '/Arsenica-Regular.eot');
-	src: url($fonts + '/Arsenica-Regular.eot?#iefix') format('embedded-opentype'),
-	url($fonts + '/Arsenica-Regular.woff2') format('woff2'),
-	url($fonts + '/Arsenica-Regular.woff') format('woff'),
-	url($fonts + '/Arsenica-Regular.ttf') format('truetype');
-}
+//@font-face {
+//	font-family: 'Arsenica-Regular';
+//	src: url($fonts + '/Arsenica-Regular.eot');
+//	src: url($fonts + '/Arsenica-Regular.eot?#iefix') format('embedded-opentype'),
+//	url($fonts + '/Arsenica-Regular.woff2') format('woff2'),
+//	url($fonts + '/Arsenica-Regular.woff') format('woff'),
+//	url($fonts + '/Arsenica-Regular.ttf') format('truetype');
+//}

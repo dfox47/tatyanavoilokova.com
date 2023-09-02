@@ -36,12 +36,6 @@
 			z-index: -1;
 		}
 
-		&--dark {
-			&::after {
-				background-color: $c_menu_bg;
-			}
-		}
-
 		&--instagram {
 			background-image: url(#{$icons}/instagram.svg);
 		}
