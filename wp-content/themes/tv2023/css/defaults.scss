@@ -1,15 +1,3 @@
-@keyframes loading {
-	0% {
-		left: 45%;
-	}
-	50% {
-		left: 55%;
-	}
-	100% {
-		left: 45%;
-	}
-}
-
 // Standart class [START]
 * {
 	border: 0 none;
@@ -41,6 +29,10 @@ ul {
 
 
 // help classes [START]
+.bold {
+	font-weight: 700;
+}
+
 .hidden {
 	display: none;
 }
