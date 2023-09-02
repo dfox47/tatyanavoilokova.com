@@ -1,28 +1,27 @@
-
 <ul class="social_list">
-	<?php // all options https://brokertop.ru/wp-admin/admin.php?page=theme-custom-options
-	$instagram      = esc_attr(get_option('broker_inst'));
-	$telegram       = esc_attr(get_option('broker_telegram'));
-	$whatsapp       = esc_attr(get_option('broker_whatsapp'));
+	<?php // all options https://tatyanavoilokova.com/wp-admin/admin.php?page=theme-custom-options
+	$instagram      = esc_attr(get_option('theme_inst'));
+	$telegram       = esc_attr(get_option('theme_telegram'));
+	$whatsapp       = esc_attr(get_option('theme_whatsapp'));
 
 	// whatsapp
-	if ( isset($whatsapp) ) { ?>
+	if (isset($whatsapp)) { ?>
 		<li class="social_list__item">
-			<a class="social_list__icon social_list__icon--whatsapp" href="//wa.me/<?php echo $whatsapp; ?>" target="_blank"></a>
+			<a class="social_list__icon social_list__icon--whatsapp" href="//wa.me/<?= $whatsapp; ?>" target="_blank"></a>
 		</li>
 	<?php }
 
 	// telegram
-	if ( isset($telegram) ) { ?>
+	if (isset($telegram)) { ?>
 		<li class="social_list__item">
-			<a class="social_list__icon social_list__icon--telegram" href="//t.me/<?php echo $telegram; ?>" target="_blank"></a>
+			<a class="social_list__icon social_list__icon--telegram" href="//t.me/<?= $telegram; ?>" target="_blank"></a>
 		</li>
 	<?php }
 
 	// instagram
-	if ( isset($instagram) ) { ?>
+	if (isset($instagram)) { ?>
 		<li class="social_list__item">
-			<a class="social_list__icon social_list__icon--instagram" href="//www.instagram.com/<?php echo $instagram; ?>" target="_blank"></a>
+			<a class="social_list__icon social_list__icon--instagram" href="//www.instagram.com/<?= $instagram; ?>" target="_blank"></a>
 		</li>
 	<?php } ?>
 </ul>

@@ -5,7 +5,7 @@ $i = esc_url(get_template_directory_uri()) . '/i'; ?>
 	<?php dynamic_sidebar('footer'); ?>
 <?php endif; ?>
 
-<footer class="footer<?php if (is_front_page()) { ?> footer--home<?php } ?>">
+<footer class="footer">
 	<div class="wrap">
 		<div class="footer_wrap2">
 			<div class="footer_wrap">
