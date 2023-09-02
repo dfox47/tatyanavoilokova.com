@@ -1,4 +1,3 @@
-
 const fs                = require('fs')
 const concat            = require('gulp-concat')
 const config            = JSON.parse(fs.readFileSync('../config.json'))
@@ -44,12 +43,9 @@ let conn = getFtpConnection()
 
 
 gulp.task('css', function () {
-	return gulp.src(localCss + 'styles.scss')
+	return gulp.src(localCss + 'style.scss')
 		.pipe(sass())
 		.pipe(cssMinify())
-		.pipe(rename({
-			suffix: ".min"
-		}))
 		.pipe(conn.dest(remoteTheme))
 })
 

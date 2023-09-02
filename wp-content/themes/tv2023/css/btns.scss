@@ -8,104 +8,90 @@
 	text-transform: uppercase;
 	transition: $transition;
 
-	&__animated {
-		animation: slidetounlock 5s infinite;
-		background: -webkit-gradient(linear,left top,right top,color-stop(0, #ddd),color-stop(0.4, #ddd),color-stop(0.5, $c_main),color-stop(0.6, #ddd),color-stop(1, #ddd));
-		-webkit-background-clip: text;
-		-webkit-text-fill-color: transparent;
-		-webkit-text-size-adjust: none;
-		transition: $transition;
+	&__close {
+		height: 50px;
+		width: 50px;
 
 		&:hover {
-			background: $c_main;
-			-webkit-text-fill-color: #fff;
+			&::after,
+			&::before {
+				height: 3px;
+			}
 		}
-	}
-}
 
-.btn_close {
-	height: 50px;
-	width: 50px;
-
-	&:hover {
 		&::after,
 		&::before {
-			height: 3px;
-		}
-	}
-
-	&::after,
-	&::before {
-		background-color: $c_main;
-		content: "";
-		height: 1px;
-		left: 4px;
-		position: absolute;
-		top: 22px;
-		transition: $transition;
-		width: 40px;
-	}
-
-	&::after {
-		transform: rotate(45deg);
-	}
-
-	&::before {
-		transform: rotate(-45deg);
-	}
-}
-
-.btn_more {
-	border: 1px solid $c_main;
-	color: #fff;
-	letter-spacing: .03em;
-	padding: .8em 3.8em;
-
-	&:hover {
-		background-color: $c_main;
-	}
-}
-
-.btn_submit {
-	background: none;
-	color: #fff;
-	font-family: $font_main;
-	letter-spacing: .08em;
-	text-align: center;
-
-	input {
-		left: -9999px;
-		position: absolute;
-	}
-
-	&--dark {
-		background-color: $c_text;
-
-		.wpcf7-spinner {
-			display: none;
-			left: 50%;
+			background-color: $c_main;
+			content: "";
+			height: 1px;
+			left: 4px;
 			position: absolute;
-			top: 50%;
-			transform: translate(-50%,-50%);
+			top: 22px;
+			transition: $transition;
+			width: 40px;
+		}
+
+		&::after {
+			transform: rotate(45deg);
+		}
+
+		&::before {
+			transform: rotate(-45deg);
 		}
 	}
 
-	&__title {
+	&__more {
 		border: 1px solid $c_main;
-		display: block;
-		max-width: 260px;
-		padding: 14px;
-		text-align: center;
-		transition: $transition;
-		width: 100%;
+		color: #fff;
+		letter-spacing: .03em;
+		padding: .8em 3.8em;
+
+		&:hover {
+			background-color: $c_main;
+		}
 	}
 
-	&:hover {
-		.btn_submit {
-			&__title {
-				background: $c_main;
-				color: #000;
-				-webkit-text-fill-color: #000;
+	&__submit {
+		background: none;
+		color: #fff;
+		font-family: $font_main;
+		letter-spacing: .08em;
+		text-align: center;
+
+		input {
+			left: -9999px;
+			position: absolute;
+		}
+
+		&--dark {
+			background-color: $c_text;
+
+			.wpcf7-spinner {
+				display: none;
+				left: 50%;
+				position: absolute;
+				top: 50%;
+				transform: translate(-50%,-50%);
+			}
+		}
+
+		&__title {
+			border: 1px solid $c_main;
+			display: block;
+			max-width: 260px;
+			padding: 14px;
+			text-align: center;
+			transition: $transition;
+			width: 100%;
+		}
+
+		&:hover {
+			.btn__submit {
+				&__title {
+					background: $c_main;
+					color: #000;
+					-webkit-text-fill-color: #000;
+				}
 			}
 		}
 	}

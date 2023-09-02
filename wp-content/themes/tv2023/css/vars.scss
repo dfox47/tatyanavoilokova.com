@@ -1,5 +1,5 @@
 // https://fonts.google.com/specimen/Montserrat?subset=cyrillic
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 // theme folders
 $themeFolder:       '/wp-content/themes/broker2022';
@@ -28,12 +28,10 @@ $tablet:            'only screen and (max-width: 1023px)';
 // fonts
 $font_main:         'Ubuntu', Arial, Helvetica, sans-serif;
 
-// Arsenica-Regular
+// Ubuntu
 //@font-face {
-//	font-family: 'Arsenica-Regular';
-//	src: url($fonts + '/Arsenica-Regular.eot');
-//	src: url($fonts + '/Arsenica-Regular.eot?#iefix') format('embedded-opentype'),
-//	url($fonts + '/Arsenica-Regular.woff2') format('woff2'),
-//	url($fonts + '/Arsenica-Regular.woff') format('woff'),
-//	url($fonts + '/Arsenica-Regular.ttf') format('truetype');
+//	font-family: 'Ubuntu-Regular';
+//	src: url($fonts + '/Ubuntu.ttf') format('truetype');
+//	font-style: normal;
+//	font-weight: 400;
 //}
