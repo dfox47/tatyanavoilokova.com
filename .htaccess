@@ -17,6 +17,6 @@ RewriteRule . /index.php [L]
 
 
 
-# Редирект с протокола http на https.
+# redirect from http to https.
 RewriteCond %{HTTPS} !=on
 RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
