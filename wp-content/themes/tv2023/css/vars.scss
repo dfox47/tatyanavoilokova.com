@@ -1,0 +1,46 @@
+// https://fonts.google.com/specimen/Montserrat?subset=cyrillic
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+// theme folders
+$themeFolder:       '/wp-content/themes/broker2022';
+$i:                 $themeFolder + '/i';
+$icons:             $i + '/icons';
+$fonts:             $themeFolder + '/fonts';
+
+// colors
+$c_content_bg:      #f8f8f8;
+$c_copyright:       #9d9da1;
+$c_error:           #de68ca;
+$c_filter_bg:       #d9d9d9;
+$c_filter_border:   #7a7a7a;
+$c_filter_title:    #7f7f7f;
+$c_hr:              #cbcbcb;
+$c_img_bg:          #7c757a;
+$c_main:            #ddb472;
+$c_menu_bg:         #2b2b33;
+$c_quote_sign:      #9e9ea1;
+$c_text:            #2c2c2c;
+
+$transition:        all .3s ease-in-out;
+
+// @medias
+$desktop:           'only screen and (max-width: 1279px)';
+$desktop_hd:        'only screen and (max-width: 1400px)';
+$mobile:            'only screen and (max-width: 767px)';
+$mobile_s:          'only screen and (max-width: 400px)';
+$tablet:            'only screen and (max-width: 1023px)';
+
+// fonts
+$font_arsenica:     'Arsenica-Regular',     Arial, Helvetica, sans-serif;
+$font_main:         'Montserrat',           Arial, Helvetica, sans-serif;
+$font_montserrat:   'Montserrat',           Arial, Helvetica, sans-serif;
+
+// Arsenica-Regular
+@font-face {
+	font-family: 'Arsenica-Regular';
+	src: url($fonts + '/Arsenica-Regular.eot');
+	src: url($fonts + '/Arsenica-Regular.eot?#iefix') format('embedded-opentype'),
+	url($fonts + '/Arsenica-Regular.woff2') format('woff2'),
+	url($fonts + '/Arsenica-Regular.woff') format('woff'),
+	url($fonts + '/Arsenica-Regular.ttf') format('truetype');
+}
