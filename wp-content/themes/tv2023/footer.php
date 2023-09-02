@@ -1,9 +1,5 @@
-<?php
-$currentUrl = $_SERVER['REQUEST_URI'];
-$dumm       = '/wp-content/themes/broker2022/i/dumm.png';
-$i          = esc_url(get_template_directory_uri()) . '/i';
-$whatsapp   = esc_attr(get_option('broker_whatsapp'));
-?>
+<?php // link to images folder
+$i = esc_url(get_template_directory_uri()) . '/i'; ?>
 
 <?php if (is_active_sidebar('footer')) : ?>
 	<?php dynamic_sidebar('footer'); ?>
@@ -22,11 +18,6 @@ $whatsapp   = esc_attr(get_option('broker_whatsapp'));
 					'menu'              => 'footer_menu',
 					'menu_class'        => 'footer_menu',
 				)); ?>
-
-				<a class="powered_by" href="//flerr.ru/" target="_blank">
-					<span>разработка сайта:</span>
-					<img src="<?= $i; ?>/icons/flerr.svg" alt="flerr.ru" />
-				</a>
 			</div>
 
 			<div class="footer_bottom">
@@ -41,18 +32,10 @@ $whatsapp   = esc_attr(get_option('broker_whatsapp'));
 					<?php // social
 					include "template-parts/social.php"; ?>
 				</div>
-
-				<a class="footer_agree" href="">Согласие на обработку персональных данных</a>
-
-				<div class="yandex_badge_wrap js-yandex-badge"></div>
 			</div>
 		</div>
 	</div>
 </footer>
-
-<?php if ($whatsapp) { ?>
-	<a class="whatsapp_link" href="//wa.me/<?= $whatsapp; ?>" target="_blank"><span class="whatsapp_link__img js-img-scroll" data-src="<?= $i . '/icons/whatsapp_green.svg'; ?>" title="whatsapp"></span></a>
-<?php } ?>
 
 <?php // popup
 include "template-parts/popups.php"; ?>

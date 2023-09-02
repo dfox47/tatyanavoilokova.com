@@ -1,12 +1,11 @@
-<?php
-// more info https://codex.wordpress.org/Creating_Options_Pages
+<?php // more info https://codex.wordpress.org/Creating_Options_Pages
 // theme's custom options
 add_action('admin_menu', 'customOptions');
 
 function customOptions() {
 	add_menu_page(
-		'Настройки TOP Broker Estate',
-		'TOP Broker',
+		'Настройки темы Tatyana Voilokova 2023',
+		'Special options',
 		'manage_options',
 		'theme-custom-options',
 		'customOptionsContent',
@@ -18,142 +17,79 @@ function customOptions() {
 }
 
 function customOptionsSettings() {
-	register_setting('broker-options-admin', 'broker_address');
-	register_setting('broker-options-admin', 'broker_footer_address');
-	register_setting('broker-options-admin', 'broker_footer_title');
-	register_setting('broker-options-admin', 'broker_inst');
-	register_setting('broker-options-admin', 'broker_phone');
-	register_setting('broker-options-admin', 'broker_telegram');
-	register_setting('broker-options-admin', 'broker_whatsapp');
-
-	register_setting('broker-options-admin', 'manager_1_photo');
-	register_setting('broker-options-admin', 'manager_1_name');
-	register_setting('broker-options-admin', 'manager_1_status');
+	register_setting('tv2023-options-admin', 'theme_inst');
+	register_setting('tv2023-options-admin', 'theme_phone');
+	register_setting('tv2023-options-admin', 'theme_telegram');
+	register_setting('tv2023-options-admin', 'theme_whatsapp');
 }
 
 
 
 function customOptionsContent() { ?>
 	<div class="wrap">
-		<h1>Настройки Top Broker</h1>
+		<h1>Настройки темы <strong>Tatyana Voilokova 2023</strong></h1>
 
 		<?php settings_errors(); ?>
 
 		<form method="post" action="options.php">
-			<?php settings_fields('broker-options-admin'); ?>
-			<?php do_settings_sections('broker-options-admin'); ?>
+			<?php settings_fields('tv2023-options-admin'); ?>
+			<?php do_settings_sections('tv2023-options-admin'); ?>
 
 			<table class="form-table">
 				<!-- Телефон -->
 				<tr>
-					<th scope="row"><label for="broker_phone">Телефон</label></th>
+					<th scope="row"><label for="theme_phone">Телефон</label></th>
 					<td>
-						<input id="broker_phone"
-						       name="broker_phone"
-						       placeholder="+7 (495) 150 -39 -77"
+						<input id="theme_phone"
+						       name="theme_phone"
+						       placeholder="+359(87)670-0150"
 						       type="text"
-						       value="<?php echo esc_attr(get_option('broker_phone')); ?>"
-						/>
-					</td>
-				</tr>
-
-				<!-- Адрес -->
-				<tr>
-					<th scope="row"><label for="broker_phone">Адрес</label></th>
-					<td>
-						<input id="broker_address"
-						       name="broker_address"
-						       placeholder="Пресненская набережная 8 стр.1, МФК “Город Столиц”"
-						       type="text"
-						       value="<?php echo esc_attr(get_option('broker_address')); ?>"
+						       value="<?= esc_attr(get_option('theme_phone')); ?>"
 						/>
 					</td>
 				</tr>
 
 				<!-- Instagram -->
 				<tr>
-					<th scope="row"><label for="broker_inst">Instagram</label></th>
+					<th scope="row"><label for="theme_inst">Instagram</label></th>
 					<td>
-						<input id="broker_inst"
-						       name="broker_inst"
-						       placeholder="topbroker.moscow"
+						<input id="theme_inst"
+						       name="theme_inst"
+						       placeholder="tatiana.voil"
 						       type="text"
-						       value="<?php echo esc_attr(get_option('broker_inst')); ?>"
+						       value="<?= esc_attr(get_option('theme_inst')); ?>"
 						/>
 					</td>
 				</tr>
 
 				<!-- WhatsApp -->
 				<tr>
-					<th scope="row"><label for="broker_whatsapp">WhatsApp</label></th>
+					<th scope="row"><label for="theme_whatsapp">WhatsApp</label></th>
 					<td>
-						<input id="broker_whatsapp"
-						       name="broker_whatsapp"
-						       placeholder="79778021616"
+						<input id="theme_whatsapp"
+						       name="theme_whatsapp"
+						       placeholder="359876700150"
 						       type="text"
-						       value="<?php echo esc_attr(get_option('broker_whatsapp')); ?>"
+						       value="<?= esc_attr(get_option('theme_whatsapp')); ?>"
 						/>
 					</td>
 				</tr>
 
 				<!-- Telegram -->
 				<tr>
-					<th scope="row"><label for="broker_telegram">Telegram</label></th>
+					<th scope="row"><label for="theme_telegram">Telegram</label></th>
 					<td>
-						<input id="broker_telegram"
-						       name="broker_telegram"
-						       placeholder="79778021616"
+						<input id="theme_telegram"
+						       name="theme_telegram"
+						       placeholder="359876700150"
 						       type="text"
-						       value="<?php echo esc_attr(get_option('broker_telegram')); ?>"
-						/>
-					</td>
-				</tr>
-
-				<!-- Footer | Заголовок -->
-				<tr>
-					<th scope="row"><label for="broker_footer_title">Footer | Заголовок</label></th>
-					<td>
-						<input id="broker_footer_title"
-						       name="broker_footer_title"
-						       placeholder="TOP BROKER ESTATE."
-						       type="text"
-						       value="<?php echo esc_attr(get_option('broker_footer_title')); ?>"
-						/>
-					</td>
-				</tr>
-
-				<!-- Footer | Адрес -->
-				<tr>
-					<th scope="row"><label for="broker_footer_address">Footer | Адрес</label></th>
-					<td>
-						<input id="broker_footer_address"
-						       name="broker_footer_address"
-						       placeholder="Москва, Пресненская набережная 8 стр.1, 571"
-						       type="text"
-						       value="<?php echo esc_attr(get_option('broker_footer_address')); ?>"
+						       value="<?= esc_attr(get_option('theme_telegram')); ?>"
 						/>
 					</td>
 				</tr>
 			</table>
 
-<!--			<h2>Данные менеджера 1</h2>-->
-<!---->
-<!--			<div>-->
-<!--				<label>-->
-<!--					<span>Имя</span>-->
-<!--					<input id="manager_1_name"-->
-<!--					       name="manager_1_name"-->
-<!--					       placeholder=""-->
-<!--					       type="text"-->
-<!--					       value="--><?php //echo esc_attr(get_option('manager_1_name')); ?><!--"-->
-<!--					/>-->
-<!--				</label>-->
-<!--			</div>-->
-
 			<?php submit_button(); ?>
 		</form>
 	</div>
 <?php }
-
-
-
