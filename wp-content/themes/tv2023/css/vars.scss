@@ -1,8 +1,8 @@
-// https://fonts.google.com/specimen/Montserrat?subset=cyrillic
+// https://fonts.google.com/specimen/Ubuntu
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
 
 // theme folders
-$themeFolder:       '/wp-content/themes/broker2022';
+$themeFolder:       '/wp-content/themes/tv2023';
 $i:                 $themeFolder + '/i';
 $icons:             $i + '/icons';
 $fonts:             $themeFolder + '/fonts';
@@ -13,8 +13,6 @@ $c_info:            #eff0d1;
 $c_main:            #77ba99;
 $c_secondary:       #d7c0d0;
 $c_text:            #262730;
-
-
 
 $transition:        all .3s ease-in-out;
 
@@ -27,11 +25,3 @@ $tablet:            'only screen and (max-width: 1023px)';
 
 // fonts
 $font_main:         'Ubuntu', Arial, Helvetica, sans-serif;
-
-// Ubuntu
-//@font-face {
-//	font-family: 'Ubuntu-Regular';
-//	src: url($fonts + '/Ubuntu.ttf') format('truetype');
-//	font-style: normal;
-//	font-weight: 400;
-//}

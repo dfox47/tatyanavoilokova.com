@@ -36,16 +36,16 @@
 			z-index: -1;
 		}
 
+		&--facebook {
+			background-image: url(#{$icons}/facebook.svg);
+		}
+
 		&--instagram {
 			background-image: url(#{$icons}/instagram.svg);
 		}
 
 		&--telegram {
 			background-image: url(#{$icons}/telegram.svg);
-		}
-
-		&--vk {
-			background-image: url(#{$icons}/vk.svg);
 		}
 
 		&--whatsapp {
