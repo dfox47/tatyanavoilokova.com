@@ -151,25 +151,25 @@ function woocommerce_catalog_ordering() {
 	wc_get_template( 'loop/orderby.php', array( 'catalog_orderby_options' => $catalog_orderby_options, 'orderby' => $orderby, 'show_default_orderby' => $show_default_orderby ) );
 }
 add_filter( 'acf/location/rule_types', function( $choices ){
-$choices[ __("Other",'acf') ]['wc_prod_attr'] = 'WC Product Attribute';
-return $choices;
+	$choices[ __("Other",'acf') ]['wc_prod_attr'] = 'WC Product Attribute';
+	return $choices;
 } );
- 
+
 add_filter( 'acf/location/rule_values/wc_prod_attr', function( $choices ){
 	foreach ( wc_get_attribute_taxonomies() as $attr ) {
-	$pa_name = wc_attribute_taxonomy_name( $attr->attribute_name );
-	$choices[ $pa_name ] = $attr->attribute_label;
+		$pa_name = wc_attribute_taxonomy_name( $attr->attribute_name );
+		$choices[ $pa_name ] = $attr->attribute_label;
 	}
-return $choices;
+	return $choices;
 } );
 
 add_filter( 'acf/location/rule_match/wc_prod_attr', function( $match, $rule, $options ){
 	if ( isset( $options['taxonomy'] ) ) {
-	if ( '==' === $rule['operator'] ) {
-	$match = $rule['value'] === $options['taxonomy'];
-	} elseif ( '!=' === $rule['operator'] ) {
-	$match = $rule['value'] !== $options['taxonomy'];
-	}
+		if ( '==' === $rule['operator'] ) {
+			$match = $rule['value'] === $options['taxonomy'];
+		} elseif ( '!=' === $rule['operator'] ) {
+			$match = $rule['value'] !== $options['taxonomy'];
+		}
 	}
 	return $match;
 }, 10, 3 );
@@ -177,58 +177,16 @@ add_filter( 'acf/location/rule_match/wc_prod_attr', function( $match, $rule, $op
 function art_added_tabs( array $tabs ): array {
 
 	$tabs['special_panel'] = [
-		'label'    => 'Брокер', 
-		'target'   => 'special_panel_product_data', 
-		'class'    => [ 'hide_if_grouped' ], 
-		'priority' => 5, 
+		'label'    => 'Брокер',
+		'target'   => 'special_panel_product_data',
+		'class'    => [ 'hide_if_grouped' ],
+		'priority' => 5,
 	];
 
 	return $tabs;
 }
 
-add_filter( 'woocommerce_product_data_tabs', 'art_added_tabs', 10, 1 );
-
-function art_added_tabs_icon() {
-
-	?>
-	<style>
-		#woocommerce-coupon-data ul.wc-tabs li.special_panel_options a::before,
-		#woocommerce-product-data ul.wc-tabs li.special_panel_options a::before,
-		.woocommerce ul.wc-tabs li.special_panel_options a::before  {
-			font-family: Dashicons;
-			content: "\f338";
-		}
-	</style>
-	<?php
-
-}
-
 add_action( 'admin_footer', 'art_added_tabs_icon' );
-
-function art_added_tabs_panel() {
-
-
-}
-
-add_action( 'woocommerce_product_data_panels', 'art_added_tabs_panel' );
-
-// change menu items name at admin
-function edit_admin_menus() {
-	global $menu, $submenu;
-
-	$menu[25][0] = 'Отзывы';
-	$menu[26][0] = 'Объекты';
-
-	// woocommerce
-//	$menu['55.5'][0] = 'Store';
-
-	// All products
-	$submenu['edit.php?post_type=product'][5][0] = 'Все объекты';
-
-	// attributes
-	$submenu['edit.php?post_type=product'][17][0] = 'Параметры объекта';
-}
-add_action('admin_menu', 'edit_admin_menus');
 
 
 
