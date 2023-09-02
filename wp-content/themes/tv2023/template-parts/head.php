@@ -32,12 +32,8 @@ else if ($currentUrl == '/o-kompanii/') {
 	$pageType = ' hero_block_wrap--about';
 } ?>
 
-<div class="hero_block_wrap<?= $pageType; ?>">
+<div class="hero_block_wrap">
 	<div class="hero_block<?php if (!empty($thumbUrl) && is_product()) { ?> js-img-bg<?php } ?>" <?php if (!empty($thumbUrl) && is_product()) { ?>data-src="<?= $thumbUrl; ?>"<?php } ?>>
-		<?php if ($currentUrl == '/kontakty/') {
-			include_once "contacts_map.php";
-		} ?>
-
 		<div class="header_wrap">
 			<header class="header">
 				<div class="header_left">
@@ -77,15 +73,6 @@ else if ($currentUrl == '/o-kompanii/') {
 					if (get_the_title()) { ?>
 						<h1><?= get_the_title(); ?></h1>
 					<?php } ?>
-
-					<?php // Адрес объекта
-					global $product;
-
-					if ($product -> get_attribute('pa_adres')) { ?>
-						<div class="product_address">
-							<span><?= $product -> get_attribute('pa_adres'); ?></span>
-						</div>
-					<?php } ?>
 				</div>
 			<?php }
 			elseif ($currentUrl == '/o-kompanii/') {
@@ -97,15 +84,5 @@ else if ($currentUrl == '/o-kompanii/') {
 				<?php }
 			} ?>
 		</div>
-
-		<?php if (is_front_page()) {
-			include_once "hero.php";
-		}
-		elseif ($currentUrl == '/novostrojki/') {
-			include_once "new_buildings.php";
-		}
-		elseif ($currentUrl == '/zarubezhnaya/') {
-			include_once "foreign.php";
-		} ?>
 	</div>
 </div>
