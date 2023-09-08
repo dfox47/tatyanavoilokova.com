@@ -12,9 +12,7 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 	<div class="header_left">
 		<a class="logo" href="/"></a>
 
-		<div class="header_menu_toggle js-header-menu-toggle">
-			<span></span> Меню
-		</div>
+		<div class="header_menu_toggle js-header-menu-toggle"></div>
 	</div>
 
 	<div class="header_menu_wrap">
@@ -36,3 +34,8 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 		<?php include "social.php"; ?>
 	</div>
 </header>
+
+<div class="hero">
+	<div class="hero__title">Tatyana<br>Voilokova</div>
+	<div class="hero__subtitle">photographer</div>
+</div>
