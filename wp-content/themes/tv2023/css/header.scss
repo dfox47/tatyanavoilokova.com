@@ -1,8 +1,33 @@
-.header {}
+.header {
+	align-items: center;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header_left {
+	position: relative;
+}
+
+.header_menu {
+	background-color: #fff;
+	display: none;
+	position: absolute;
+	top: 100%;
+
+	&__link {
+		color: $c_main;
+	}
+}
 
 .header_menu_active {
+	.header_menu {
+		display: block;
+	}
+
 	.header_menu_toggle {
-		&::after {
+		&::after,
+		&::before {
+			top: 18px;
 			transform: rotate(45deg);
 		}
 
@@ -14,9 +39,9 @@
 
 .header_menu_toggle {
 	cursor: pointer;
-	height: 30px;
+	height: 40px;
 	position: relative;
-	width: 30px;
+	width: 40px;
 
 	&::after,
 	&::before {
@@ -25,17 +50,29 @@
 		content: "";
 		height: 3px;
 		left: 50%;
-		margin: 0 0 0 -7px;
+		margin: 0 0 0 -15px;
 		position: absolute;
 		transition: $transition;
-		width: 14px;
+		width: 30px;
 	}
 
 	&::after {
-		top: 6px;
+		top: 12px;
 	}
 
 	&::before {
-		top: 12px;
+		top: 22px;
 	}
+
+	&:hover {
+		&::after,
+		&::before {
+			height: 5px;
+		}
+	}
+}
+
+.header_right {
+	align-items: center;
+	display: flex;
 }
