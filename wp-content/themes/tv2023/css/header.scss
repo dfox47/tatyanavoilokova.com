@@ -1,1 +1,41 @@
 .header {}
+
+.header_menu_active {
+	.header_menu_toggle {
+		&::after {
+			transform: rotate(45deg);
+		}
+
+		&::before {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+.header_menu_toggle {
+	cursor: pointer;
+	height: 30px;
+	position: relative;
+	width: 30px;
+
+	&::after,
+	&::before {
+		background-color: $c_main;
+		border-radius: 5px;
+		content: "";
+		height: 3px;
+		left: 50%;
+		margin: 0 0 0 -7px;
+		position: absolute;
+		transition: $transition;
+		width: 14px;
+	}
+
+	&::after {
+		top: 6px;
+	}
+
+	&::before {
+		top: 12px;
+	}
+}
