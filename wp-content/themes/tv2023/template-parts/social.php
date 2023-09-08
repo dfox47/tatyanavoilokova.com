@@ -1,9 +1,9 @@
 <ul class="social_list">
 	<?php // all options https://tatyanavoilokova.com/wp-admin/admin.php?page=theme-custom-options
-	$facebook       = esc_attr(get_option('theme_facebook')) ? esc_attr(get_option('theme_facebook')) : '//www.facebook.com/profile.php?id=100001149043902';
-	$instagram      = esc_attr(get_option('theme_inst')) ? esc_attr(get_option('theme_inst')) : 'tatiana.voil';
-	$telegram       = esc_attr(get_option('theme_telegram')) ? esc_attr(get_option('theme_telegram')) : '359876700150';
-	$whatsapp       = esc_attr(get_option('theme_whatsapp')) ? esc_attr(get_option('theme_whatsapp')) : '359876700150'; ?>
+	$facebook       = esc_attr(get_option('theme_facebook'))    ? esc_attr(get_option('theme_facebook'))    : '//www.facebook.com/profile.php?id=100001149043902';
+	$instagram      = esc_attr(get_option('theme_inst'))        ? esc_attr(get_option('theme_inst'))        : 'tatiana.voil';
+	$telegram       = esc_attr(get_option('theme_telegram'))    ? esc_attr(get_option('theme_telegram'))    : '359876700150';
+	$whatsapp       = esc_attr(get_option('theme_whatsapp'))    ? esc_attr(get_option('theme_whatsapp'))    : '359876700150'; ?>
 
 	<?php // whatsapp ?>
 	<li class="social_list__item">
