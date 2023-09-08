@@ -71,8 +71,7 @@ gulp.task('js_copy', function () {
 
 gulp.task('js', function () {
 	return gulp.src([
-			localJs + 'owl.carousel.js',
-			localJs + 'jspdf.min.js',
+			localJs + 'owl.carousel.min.js',
 			localJs + '**/*.js'
 		])
 		.pipe(concat('all.js'))
@@ -80,7 +79,7 @@ gulp.task('js', function () {
 		.pipe(rename({
 			suffix: ".min"
 		}))
-		.pipe(conn.dest(remoteFolder))
+		.pipe(conn.dest(remoteTheme))
 })
 
 gulp.task('watch', function() {
