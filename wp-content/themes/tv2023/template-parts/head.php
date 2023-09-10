@@ -10,13 +10,9 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 
 <header class="header">
 	<div class="header_left">
-		<a class="logo" href="/"></a>
+		<a class="logo" href="/"><span class="js-img-scroll" data-src="" title=""></span></a>
 
 		<div class="header_menu_toggle js-header-menu-toggle"></div>
-	</div>
-
-	<div class="header_menu_wrap">
-		<div class="btn btn__close js-header-menu-toggle"></div>
 
 		<?php // header_menu
 		wp_nav_menu(array(
@@ -35,7 +31,12 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 	</div>
 </header>
 
-<div class="hero">
-	<div class="hero__title">Tatyana<br>Voilokova</div>
-	<div class="hero__subtitle">photographer</div>
+<div class="hero js-hero">
+	<div class="hero__bg"></div>
+
+	<div class="hero__content">
+		<div class="hero__title">Tatyana<br>Voilokova</div>
+		<div class="hero__subtitle">photographer</div>
+		<a class="btn btn__more" href="javascript:void(0);">Portfolio</a>
+	</div>
 </div>

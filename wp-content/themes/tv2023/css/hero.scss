@@ -1,5 +1,42 @@
 .hero {
-	&__subtitle {}
+	align-items: center;
+	background: $c_text;
+	color: #fff;
+	display: flex;
+	height: 100vh;
+	justify-content: center;
+	overflow: hidden;
+	perspective: 1000px;
+	position: relative;
+	width: 100%;
+	z-index: 3;
 
-	&__title {}
+	&__bg {
+		background: url(/wp-content/uploads/2023/09/1-scaled.jpg) center center no-repeat scroll transparent;
+		background-size: cover;
+		inset: -5vw;
+		position: absolute;
+		z-index: 1;
+	}
+
+	&__content {
+		align-items: center;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		transform-style: preserve-3d;
+		transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+		position: relative;
+		z-index: 3;
+	}
+
+	&__subtitle {
+		margin: 1em 0;
+	}
+
+	&__title {
+		font-size: calc(var(--index) * 3.5);
+		text-align: center;
+		text-transform: uppercase;
+	}
 }

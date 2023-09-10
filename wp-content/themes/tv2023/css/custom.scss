@@ -1,3 +1,7 @@
+:root {
+	--index: calc(1vw + 1vh);
+}
+
 blockquote {
 	font-size: 18px;
 	line-height: 1.8;
@@ -144,23 +148,22 @@ img {
 }
 
 .logo {
-	background: url(#{$i}/logo.svg) center no-repeat scroll transparent;
-	background-size: contain;
-	display: inline-block;
-	height: 51px;
-	margin: 0 30px 0 0;
-	position: relative;
-	transition: $transition;
-	width: 143px;
-
-	&:hover {
-		transform: scale(1.1, 1.1);
-	}
+	//background: url(#{$i}/logo.svg) center no-repeat scroll transparent;
+	//background-size: contain;
+	//display: inline-block;
+	//height: 51px;
+	//margin: 0 30px 0 0;
+	//position: relative;
+	//transition: $transition;
+	//width: 143px;
+	//
+	//&:hover {
+	//	transform: scale(1.1, 1.1);
+	//}
 }
 
 .phone {
-	background: url(#{$icons}/phone.svg) left center no-repeat scroll transparent;
-	color: #fff;
+	color: $c_main;
 	display: inline-block;
 	font-size: 14px;
 	font-weight: 700;

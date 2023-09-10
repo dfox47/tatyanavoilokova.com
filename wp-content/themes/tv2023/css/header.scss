@@ -1,7 +1,13 @@
 .header {
 	align-items: center;
+	background-color: #fff;
 	display: flex;
 	justify-content: space-between;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 5;
 }
 
 .header_left {
@@ -11,17 +17,21 @@
 .header_menu {
 	background-color: #fff;
 	display: none;
+	flex-direction: column;
 	position: absolute;
+	text-transform: uppercase;
 	top: 100%;
 
 	&__link {
 		color: $c_main;
+		text-decoration: none;
+		width: 100%;
 	}
 }
 
 .header_menu_active {
 	.header_menu {
-		display: block;
+		display: flex;
 	}
 
 	.header_menu_toggle {
@@ -75,4 +85,5 @@
 .header_right {
 	align-items: center;
 	display: flex;
+	padding: 0 8px 0 0;
 }
