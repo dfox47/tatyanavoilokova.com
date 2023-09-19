@@ -31,12 +31,4 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 	</div>
 </header>
 
-<div class="hero js-hero">
-	<div class="hero__bg"></div>
-
-	<div class="hero__content">
-		<div class="hero__title">Tatyana<br>Voilokova</div>
-		<div class="hero__subtitle">photographer</div>
-		<a class="btn btn__more" href="javascript:void(0);">Portfolio</a>
-	</div>
-</div>
+<?php include "hero.php"; ?>
