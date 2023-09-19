@@ -9,7 +9,8 @@
 //		while (have_posts()) {
 //			the_post();
 //		}
-	} ?>
+//	}
+	?>
 </main>
 
 <?php get_footer(); ?>
