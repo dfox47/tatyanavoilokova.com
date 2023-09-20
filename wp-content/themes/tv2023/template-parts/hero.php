@@ -6,4 +6,6 @@
 		<div class="hero__subtitle">photographer</div>
 		<a class="btn btn__more js-scroll-to" href="#portfolio">Portfolio</a>
 	</div>
+
+	<div class="hero__bubbles js-bubbles"></div>
 </div>
