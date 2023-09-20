@@ -8,7 +8,7 @@ setInterval(() => {
 	bubble.classList.add('bubble')
 	bubble.style.animationDuration  = duration + 'ms'
 	bubble.style.left               = Math.floor(Math.random() * $bubbles.clientWidth) + 'px'
-	bubble.style.width              = Math.floor(Math.random() * 30 + 5) + 'px'
+	bubble.style.width              = Math.floor(Math.random() * 40 + 5) + 'px'
 
 	$bubbles.append(bubble)
 
