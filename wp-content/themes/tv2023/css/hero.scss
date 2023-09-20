@@ -38,5 +38,6 @@
 		font-size: calc(var(--index) * 3.5);
 		text-align: center;
 		text-transform: uppercase;
+		text-shadow: 0 0 5px $c_text;
 	}
 }
