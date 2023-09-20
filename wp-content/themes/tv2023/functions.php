@@ -28,7 +28,11 @@ include "template-parts/theme_options.php";
 // widgets
 include "template-parts/widgets.php";
 
+// Remove p tags from category description
+remove_filter('term_description','wpautop');
 
+// Remove <p> and <br/> from Contact Form 7
+add_filter('wpcf7_autop_or_not', '__return_false');
 
 // remove script & style tags from links
 function removeScript() {
