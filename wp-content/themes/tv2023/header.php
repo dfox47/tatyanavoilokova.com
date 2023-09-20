@@ -11,13 +11,13 @@
 	<?php // favicon
 	include "template-parts/favicon.php"; ?>
 
-	<meta property="og:image" content="https://brokertop.ru/wp-content/themes/broker2022/i/og_white.png">
-	<meta property="og:title" content="Top Broker Estate">
-	<meta property="og:url" content="https://brokertop.ru">
+	<meta property="og:image" content="https://tatyanavoilokova.com/wp-content/themes/tv2023/i/favicon/favicon.png">
+	<meta property="og:title" content="Tatyana Voilokova | photographer">
+	<meta property="og:url" content="https://tatyanavoilokova.com">
 
 	<?php wp_head(); ?>
 
-	<link rel="stylesheet" href="<?= esc_url(get_template_directory_uri()); ?>/style.css?v<?= (date("YmdH")); ?>" />
+	<link rel="stylesheet" href="<?= esc_url(get_template_directory_uri()); ?>/style.css?v<?= (date("YmdHis")); ?>" />
 </head>
 
 <body>
