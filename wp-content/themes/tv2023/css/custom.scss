@@ -113,6 +113,25 @@ img {
 
 
 
+@keyframes bubbleUp {
+	from {
+		top: 100%;
+	}
+	to {
+		top: -10%;
+	}
+}
+
+.bubble {
+	animation: bubbleUp linear;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	box-shadow: inset 3px 3px .3rem rgba($c_main, .3) ,inset -1px -1px .3rem #fff;
+	position: absolute;
+	top: 100%;
+	width: 50px;
+}
+
 .copyright {
 	color: $c_main;
 	font-size: 12px;
