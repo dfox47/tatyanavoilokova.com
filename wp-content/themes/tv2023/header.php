@@ -27,3 +27,7 @@ include "template-parts/head.php"; ?>
 <?php if (is_active_sidebar('after_header')) : ?>
 	<?php dynamic_sidebar('after_header'); ?>
 <?php endif; ?>
+
+<div id="portfolio" class="portfolio">
+	<h2>Portfolio</h2>
+</div>
