@@ -4,15 +4,27 @@ $(document).ready(function () {
 	//some code here
 })
 
-const $hero = document.querySelector('.js-hero')
 
-$hero.addEventListener('mousemove', e => {
-	Object.assign($hero, {
-		style: `
-		--move-x: ${(e.clientX - window.innerWidth / 2) * -.005}deg;
-		--move-y: ${(e.clientY - window.innerHeight / 2) * .01}deg;
-		`
-	})
+
+// add class on label while focused | not empty input
+const inputElements = document.querySelectorAll('.js-input')
+
+// Function to add the class when input is focused and not empty
+function addClassOnFocus(e) {
+	e.target.closest('.js-label').classList.add('focused')
+}
+
+// Function to remove the class when input loses focus or is empty
+function removeClassOnBlurOrEmpty(e) {
+	const $input = e.target
+
+	if ($input.value.trim() === '') {
+		$input.closest('.js-label').classList.remove('focused')
+	}
+}
+
+inputElements.forEach(function(e) {
+	e.addEventListener('focus', addClassOnFocus)
+	e.addEventListener('blur', removeClassOnBlurOrEmpty)
 })
-
 // custom.js [END]
