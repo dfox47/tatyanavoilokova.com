@@ -28,6 +28,6 @@ include "template-parts/head.php"; ?>
 	<?php dynamic_sidebar('after_header'); ?>
 <?php endif; ?>
 
-<div id="portfolio" class="portfolio">
+<div id="portfolio" class="portfolio js-hash-on-scroll">
 	<h2>Portfolio</h2>
 </div>
