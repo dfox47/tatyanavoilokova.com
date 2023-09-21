@@ -8,7 +8,7 @@ if (get_the_post_thumbnail_url()) {
 // page type
 $currentUrl = $_SERVER['REQUEST_URI']; ?>
 
-<header class="header">
+<header id="home" class="header js-hash-on-scroll">
 	<div class="header_left">
 		<a class="logo" href="/"><span class="js-img-scroll" data-src="" title=""></span></a>
 
