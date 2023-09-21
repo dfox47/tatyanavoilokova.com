@@ -16,6 +16,8 @@
 		background-size: cover;
 		inset: -5vw;
 		position: absolute;
+		transform-style: preserve-3d;
+		transform: rotateX(var(--move-y)) rotateY(var(--move-x));
 		z-index: 1;
 	}
 
@@ -25,7 +27,7 @@
 		flex-direction: column;
 		justify-content: center;
 		transform-style: preserve-3d;
-		transform: rotateX(var(--move-y)) rotateY(var(--move-x));
+		transform: rotateX(var(--move-y)) rotateY(var(--move-x)) translateZ(180px) scale(.8);
 		position: relative;
 		z-index: 3;
 	}
