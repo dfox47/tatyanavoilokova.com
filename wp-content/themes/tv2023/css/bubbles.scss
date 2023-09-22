@@ -30,9 +30,8 @@
 	bottom: 31%;
 	height: 30%;
 	left: 50%;
-	pointer-events: none;
 	position: absolute;
 	transform: translateX(-50%) rotateX(var(--move-y)) rotateY(var(--move-x)) translateZ(80px);
 	width: 190px;
-	z-index: 2;
+	z-index: 7;
 }
