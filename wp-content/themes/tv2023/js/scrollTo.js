@@ -9,7 +9,7 @@ scrollTo.forEach((e) => {
 		if ($block) {
 			window.scrollTo({
 				behavior:   'smooth',
-				top:        $block.offsetTop - 100
+				top:        $block.offsetTop - 50
 			})
 		}
 	})
