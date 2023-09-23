@@ -5,7 +5,7 @@
 		<div class="hero__title">Tatyana<br>Voilokova</div>
 		<div class="hero__subtitle">photographer</div>
 		<a class="btn btn__more js-scroll-to" href="#portfolio">Portfolio</a>
-	</div>
 
-	<div class="bubbles js-bubbles"></div>
+		<div class="bubbles js-bubbles"></div>
+	</div>
 </div>
