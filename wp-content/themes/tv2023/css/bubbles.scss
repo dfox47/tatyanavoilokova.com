@@ -27,8 +27,8 @@
 }
 
 .bubbles {
-	bottom: 31%;
-	height: 30%;
+	bottom: 50px;
+	height: 50%;
 	left: 50%;
 	position: absolute;
 	transform: translateX(-50%) rotateX(var(--move-y)) rotateY(var(--move-x)) translateZ(80px);
