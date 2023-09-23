@@ -115,6 +115,16 @@ img {
 
 
 
+.about {
+	margin: 0 auto;
+	max-width: 600px;
+
+	&__img {
+		border-radius: 8px;
+		width: 100%;
+	}
+}
+
 .copyright {
 	color: $c_main;
 	font-size: 12px;
