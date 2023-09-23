@@ -5,7 +5,8 @@ $(document).ready(function () {
 	$('.js-owl-carousel').owlCarousel({
 		items:      1,
 		loop:       true,
-		nav:        true
+		nav:        true,
+		navText:    ['', '']
 	})
 })
 

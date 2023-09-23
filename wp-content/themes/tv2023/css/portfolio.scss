@@ -2,17 +2,27 @@
 
 .portfolio_slider {
 	margin: 0 auto;
-	max-width: 400px;
+	max-width: 600px;
 
 	&__item {
+		border-radius: 8px;
+		height: 100%;
 		left: 0;
 		object-fit: contain;
 		position: absolute;
 		top: 0;
+		width: 100%;
 	}
 
 	.owl-item {
-		padding: 70% 0 0;
 		position: relative;
+
+		&::after {
+			content: "";
+			display: block;
+			padding: 70% 0 0;
+			position: relative;
+			width: 100%;
+		}
 	}
 }

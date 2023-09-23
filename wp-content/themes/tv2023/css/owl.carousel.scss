@@ -219,8 +219,8 @@ img.owl-lazy {
 
 .owl-next,
 .owl-prev {
-	background-color: #000;
-	border-radius: 0;
+	background-color: $c_text;
+	border-radius: 50%;
 	height: 56px;
 	margin-top: -28px;
 	opacity: 1;
@@ -230,116 +230,66 @@ img.owl-lazy {
 
 	&::after,
 	&::before {
-		content: "";
-		position: absolute;
-		top: 48%;
-		transition: $transition;
-	}
-
-	&::after {
 		background-color: $c_main;
+		content: "";
 		height: 2px;
-		margin: 0;
-		width: 0;
-	}
-
-	&::before {
-		border-left: 2px solid $c_main;
-		border-top: 2px solid $c_main;
-		height: 20px;
-		margin: -9px 0 0;
+		left: 50%;
+		transition: $transition;
+		position: absolute;
+		top: 50%;
 		width: 20px;
 	}
 
+	&::after {
+		margin: 7px 0 0 -8px;
+	}
+
+	&::before {
+		margin: -7px 0 0 -8px;
+	}
+
 	&:hover {
-		&::after {
-			width: 200px;
-		}
-	}
+		opacity: .8;
 
-	@media #{$desktop_hd} {
-		bottom: -20px;
-		margin: 0;
-		top: auto;
-		transform: none;
+		&::after,
+		&::before {
+			height: 4px;
+		}
 
 		&::after {
-			display: none;
+			margin-top: 5px;
 		}
-
-		&--next {
-			&::before {
-				margin: -5px 0 0;
-			}
-		}
-
-		&--prev {
-			&::before {
-				margin: -5px 0 0;
-			}
-		}
-	}
-
-	@media #{$tablet} {
-		height: 36px;
-		width: 36px;
 
 		&::before {
-			height: 12px;
-			margin-top: -6px;
-			width: 12px;
+			margin-top: -7px;
 		}
-	}
-
-	@media #{$mobile} {
-		bottom: -43px;
 	}
 }
 
 .owl-next {
-	left: auto;
-	right: -20px;
+	left: 100%;
+	margin-left: 20px;
 
 	&::after {
-		left: 46px;
+		transform: rotate(-45deg);
 	}
 
 	&::before {
-		left: 14px;
-		transform: rotate(135deg);
-	}
-
-	@media #{$tablet} {
-		&::before {
-			left: 10px;
-		}
-	}
-
-	@media #{$mobile} {
-		right: -8px;
+		transform: rotate(45deg);
 	}
 }
 
 .owl-prev {
-	left: -20px;
-	right: auto;
+	margin-right: 20px;
+	right: 100%;
 
 	&::after {
-		right: 46px;
+		margin-left: -12px;
+		transform: rotate(45deg);
 	}
 
 	&::before {
-		right: 14px;
+		margin-left: -12px;
 		transform: rotate(-45deg);
-	}
-
-	@media #{$tablet} {
-		&::before {
-			right: 10px;
-		}
-	}
-
-	@media #{$mobile} {
-		left: -8px;
 	}
 }
