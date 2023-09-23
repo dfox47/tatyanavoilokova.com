@@ -1,8 +1,13 @@
-.portfolio {}
+.portfolio {
+	.wp-block-group__inner-container {
+		padding: 0 10px;
+	}
+}
 
 .portfolio_slider {
 	margin: 0 auto;
 	max-width: 600px;
+	padding: 0 0 30px;
 
 	&__item {
 		border-radius: 8px;
@@ -23,6 +28,22 @@
 			padding: 70% 0 0;
 			position: relative;
 			width: 100%;
+		}
+	}
+
+	.owl-stage-outer {
+		border-radius: 8px;
+	}
+
+	&.wp-block-gallery {
+		&.has-nested-images {
+			figure.wp-block-image {
+				height: 100%;
+				left: 0;
+				position: absolute;
+				top: 0;
+				width: 100% !important;
+			}
 		}
 	}
 }
