@@ -2,16 +2,18 @@
 $i = esc_url(get_template_directory_uri()) . '/i'; ?>
 
 <?php if (is_active_sidebar('footer')) : ?>
-<!--	--><?php //dynamic_sidebar('footer'); ?>
+	<!--	--><?php //dynamic_sidebar('footer'); ?>
 <?php endif; ?>
 
 
 
-<div class="footer_contact">
-	<?php if ( shortcode_exists( 'contact-form-7' ) ) {
-		echo do_shortcode('[contact-form-7 id="f231649" title="contact_footer"]');
-	} ?>
-</div>
+<?php if ( shortcode_exists( 'contact-form-7' ) ) { ?>
+	<div class="wrap">
+		<div class="footer_contact">
+			<?= do_shortcode('[contact-form-7 id="f231649" title="contact_footer"]'); ?>
+		</div>
+	</div>
+<?php } ?>
 
 <footer class="footer">
 	<div class="footer_phone">
