@@ -29,23 +29,11 @@ include "template-parts/head.php"; ?>
 <?php endif; ?>
 
 <div id="about" class="about js-hash-on-scroll">
-	<h2>About me</h2>
+	<div class="wrap">
+		<h2>About me</h2>
 
-	<span class="about__img js-img-scroll" data-src="/wp-content/uploads/2023/09/54.jpg"></span>
+		<span class="about__img js-img-scroll" data-src="/wp-content/uploads/2023/09/54.jpg"></span>
 
-	<p>Professional photographer since 2020</p>
-</div>
-
-<div id="portfolio" class="portfolio js-hash-on-scroll">
-	<h2>Portfolio</h2>
-
-	<div class="portfolio_slider">
-		<div class="owl-carousel js-owl-carousel">
-			<span class="portfolio_slider__item js-img-scroll" data-src="/wp-content/uploads/2023/09/2.jpg"></span>
-			<span class="portfolio_slider__item js-img-scroll" data-src="/wp-content/uploads/2023/09/4.jpg"></span>
-			<span class="portfolio_slider__item js-img-scroll" data-src="/wp-content/uploads/2023/09/22.jpg"></span>
-			<span class="portfolio_slider__item js-img-scroll" data-src="/wp-content/uploads/2023/09/50.jpg"></span>
-			<span class="portfolio_slider__item js-img-scroll" data-src="/wp-content/uploads/2023/09/77.jpg"></span>
-		</div>
+		<p>Professional photographer since 2020</p>
 	</div>
 </div>
