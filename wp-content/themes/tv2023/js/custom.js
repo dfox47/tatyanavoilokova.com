@@ -1,7 +1,12 @@
 // custom.js [START]
 // for jQuery scripts
 $(document).ready(function () {
-	//some code here
+	// default owl carousel
+	$('.js-owl-carousel').owlCarousel({
+		items:      1,
+		loop:       true,
+		nav:        true
+	})
 })
 
 
