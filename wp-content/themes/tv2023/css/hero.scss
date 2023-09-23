@@ -42,4 +42,8 @@
 		text-transform: uppercase;
 		text-shadow: 0 0 5px $c_text;
 	}
+
+	@media #{$tablet} {
+		height: 700px;
+	}
 }
