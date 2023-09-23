@@ -4,10 +4,15 @@
 	display: flex;
 	justify-content: space-between;
 	left: 0;
-	position: absolute;
+	opacity: .85;
+	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 5;
+
+	&:hover {
+		opacity: 1;
+	}
 }
 
 .header_left {
@@ -16,11 +21,30 @@
 
 .header_menu {
 	background-color: #fff;
+	border-color: 1px solid $c_main;
 	display: none;
 	flex-direction: column;
 	position: absolute;
 	text-transform: uppercase;
 	top: 100%;
+
+	a {
+		color: $c_main;
+		display: block;
+		padding: 10px 20px;
+		text-align: center;
+		text-decoration: none;
+		transition: $transition;
+		width: 100%;
+
+		&:hover {
+			background-color: $c_text;
+		}
+	}
+
+	li {
+		width: 100%;
+	}
 
 	&__link {
 		color: $c_main;
@@ -30,6 +54,10 @@
 }
 
 .header_menu_active {
+	.header {
+		opacity: 1;
+	}
+
 	.header_menu {
 		display: flex;
 	}
