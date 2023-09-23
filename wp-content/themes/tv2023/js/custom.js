@@ -3,10 +3,12 @@
 $(document).ready(function () {
 	// default owl carousel
 	$('.js-owl-carousel').owlCarousel({
-		items:      1,
-		loop:       true,
-		nav:        true,
-		navText:    ['', '']
+		autoplay:           true,
+		autoplayTimeout:    3500,
+		items:              1,
+		loop:               true,
+		nav:                true,
+		navText:            ['', '']
 	})
 })
 
