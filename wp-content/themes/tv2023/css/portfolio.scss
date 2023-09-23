@@ -1,0 +1,18 @@
+.portfolio {}
+
+.portfolio_slider {
+	margin: 0 auto;
+	max-width: 400px;
+
+	&__item {
+		left: 0;
+		object-fit: contain;
+		position: absolute;
+		top: 0;
+	}
+
+	.owl-item {
+		padding: 70% 0 0;
+		position: relative;
+	}
+}
