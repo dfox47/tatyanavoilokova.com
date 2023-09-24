@@ -117,6 +117,7 @@ input {
 
 img {
 	border: 0 none;
+	max-width: 100%;
 }
 
 p {
@@ -132,16 +133,17 @@ p {
 	max-width: 500px;
 	text-align: justify;
 
-	&__img {
-		border-radius: 8px;
-		width: 100%;
-	}
-
 	p::first-letter {
+		color: $c_main;
 		float: left;
 		font-size: 3em;
 		margin: 8px 0 0;
 		padding: 0 4px 0 0;
+	}
+
+	&__img {
+		border-radius: 8px;
+		width: 100%;
 	}
 }
 
@@ -178,20 +180,7 @@ p {
 	}
 }
 
-.logo {
-	//background: url(#{$i}/logo.svg) center no-repeat scroll transparent;
-	//background-size: contain;
-	//display: inline-block;
-	//height: 51px;
-	//margin: 0 30px 0 0;
-	//position: relative;
-	//transition: $transition;
-	//width: 143px;
-	//
-	//&:hover {
-	//	transform: scale(1.1, 1.1);
-	//}
-}
+.logo {}
 
 .phone {
 	color: $c_main;
