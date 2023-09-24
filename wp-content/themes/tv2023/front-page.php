@@ -22,47 +22,51 @@
 	</div>
 </div>
 
-<div class="products_home">
-	<?php $args = array(
-		'post_type'         => 'product',
-		'posts_per_page'    => -1,
-		'tax_query'         => array(
-			array(
-				'taxonomy' => 'product_cat',
-				'field' => 'id',
-				'terms' => 20,
+<div id="products" class="products_home js-hash-on-scroll">
+	<h2>Products</h2>
+
+	<div class="products_home__list">
+		<?php $args = array(
+			'post_type'         => 'product',
+			'posts_per_page'    => -1,
+			'tax_query'         => array(
+				array(
+					'taxonomy' => 'product_cat',
+					'field' => 'id',
+					'terms' => 20,
+				),
 			),
-		),
-	);
+		);
 
-	$products_query = new WP_Query($args);
+		$products_query = new WP_Query($args);
 
-	if ($products_query->have_posts()) :
-		while ($products_query->have_posts()) : $products_query->the_post(); ?>
-			<div class="product_home">
-				<?php global $product; ?>
+		if ($products_query->have_posts()) :
+			while ($products_query->have_posts()) : $products_query->the_post(); ?>
+				<div class="product_home">
+					<?php global $product; ?>
 
-				<div class="product_home__title"></div>
-				<?php // title
-				the_title();
+					<div class="product_home__title"></div>
+					<?php // title
+					the_title();
 
-				$id = $product->get_id();?>
+					$id = $product->get_id();?>
 
-				<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'single-post-thumbnail'); ?>
+					<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'single-post-thumbnail'); ?>
 
-				<?php // full desc
-				//				the_content(); ?>
+					<?php // full desc
+					//				the_content(); ?>
 
-				<span class="product_home__img js-img-scroll" data-src="<?= str_replace('https://' . $_SERVER['HTTP_HOST'], '', $image[0]); ?>"></span>
+					<span class="product_home__img js-img-scroll" data-src="<?= str_replace('https://' . $_SERVER['HTTP_HOST'], '', $image[0]); ?>"></span>
 
-				<div class="product_home__desc"><?php the_excerpt(); ?></div>
+					<div class="product_home__desc"><?php the_excerpt(); ?></div>
 
-				<div class="product_home__more"><a class="btn btn__buy js-product-home-more" href="<?= get_permalink(); ?>">More</a></div>
-			</div>
-		<?php endwhile;
+					<div class="product_home__more"><a class="btn btn__buy js-product-home-more" href="<?= get_permalink(); ?>">More</a></div>
+				</div>
+			<?php endwhile;
 
-		wp_reset_postdata();
-	endif; ?>
+			wp_reset_postdata();
+		endif; ?>
+	</div>
 </div>
 
 <main class="main">
