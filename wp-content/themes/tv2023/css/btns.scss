@@ -8,6 +8,21 @@
 	text-transform: uppercase;
 	transition: $transition;
 
+	&__buy {
+		background-color: $c_text;
+		border-radius: 8px;
+		color: $c_main;
+		letter-spacing: .03em;
+		min-width: 150px;
+		padding: .8em 1em;
+		text-align: center;
+
+		&:hover {
+			background-color: $c_main;
+			color: $c_text;
+		}
+	}
+
 	&__close {
 		height: 50px;
 		width: 50px;
@@ -51,51 +66,6 @@
 		&:hover {
 			background-color: $c_main;
 			color: $c_info;
-		}
-	}
-
-	&__submit {
-		background: none;
-		color: #fff;
-		font-family: $font_main;
-		letter-spacing: .08em;
-		text-align: center;
-
-		input {
-			left: -9999px;
-			position: absolute;
-		}
-
-		&--dark {
-			background-color: $c_text;
-
-			.wpcf7-spinner {
-				display: none;
-				left: 50%;
-				position: absolute;
-				top: 50%;
-				transform: translate(-50%,-50%);
-			}
-		}
-
-		&__title {
-			border: 1px solid $c_main;
-			display: block;
-			max-width: 260px;
-			padding: 14px;
-			text-align: center;
-			transition: $transition;
-			width: 100%;
-		}
-
-		&:hover {
-			.btn__submit {
-				&__title {
-					background: $c_main;
-					color: #000;
-					-webkit-text-fill-color: #000;
-				}
-			}
 		}
 	}
 }
