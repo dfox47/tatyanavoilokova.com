@@ -1,6 +1,6 @@
 // bubbles.js [START]
 const bubblesGenerator = (placeTo, interval, bubbleWidth) => {
-	if (placeTo || interval || bubbleWidth) return
+	if (!placeTo || !interval || !bubbleWidth) return
 
 	const $bubbles  = document.querySelector(placeTo)
 	const delay     = interval
@@ -23,6 +23,7 @@ const bubblesGenerator = (placeTo, interval, bubbleWidth) => {
 
 		$bubbles.append(bubble)
 
+		// click
 		bubble.addEventListener('click', (e) => {
 			e.target.remove()
 
@@ -32,7 +33,7 @@ const bubblesGenerator = (placeTo, interval, bubbleWidth) => {
 				clearInterval(createSmallBubbles)
 
 				// make bubbles to hole hero block
-				bubblesGenerator('.js-hero-bubbles', 200, 110)
+				bubblesGenerator('.js-hero-bubbles', 200, 100)
 			}
 		})
 
@@ -42,5 +43,6 @@ const bubblesGenerator = (placeTo, interval, bubbleWidth) => {
 	}, delay)
 }
 
+// generate bubbles on page load
 bubblesGenerator('.js-bubbles', 1000, 40)
 // bubbles.js [END]
