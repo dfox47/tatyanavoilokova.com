@@ -25,10 +25,10 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 //		)); ?>
 
 		<ul class="header_menu">
-			<li><a class="js-scroll-to" href="#home">Home</a></li>
-			<li><a class="js-scroll-to" href="#about">About me</a></li>
-			<li><a class="js-scroll-to" href="#portfolio">Portfolio</a></li>
-			<li><a class="js-scroll-to" href="#contacts">Contacts</a></li>
+			<li><a class="js-scroll-to js-header-menu-toggle" href="#top">Home</a></li>
+			<li><a class="js-scroll-to js-header-menu-toggle" href="#about">About me</a></li>
+			<li><a class="js-scroll-to js-header-menu-toggle" href="#portfolio">Portfolio</a></li>
+			<li><a class="js-scroll-to js-header-menu-toggle" href="#contacts">Contacts</a></li>
 		</ul>
 	</div>
 
