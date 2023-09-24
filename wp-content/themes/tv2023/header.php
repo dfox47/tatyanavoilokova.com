@@ -27,13 +27,3 @@ include "template-parts/head.php"; ?>
 <?php if (is_active_sidebar('after_header')) : ?>
 	<?php dynamic_sidebar('after_header'); ?>
 <?php endif; ?>
-
-<div id="about" class="about js-hash-on-scroll">
-	<div class="wrap">
-		<h2>About me</h2>
-
-		<span class="about__img js-img-scroll" data-src="/wp-content/uploads/2023/09/54.jpg"></span>
-
-		<p>Professional photographer since 2020</p>
-	</div>
-</div>

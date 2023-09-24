@@ -8,4 +8,6 @@
 
 		<div class="bubbles js-bubbles"></div>
 	</div>
+
+	<div class="hero_bubbles js-hero-bubbles"></div>
 </div>
