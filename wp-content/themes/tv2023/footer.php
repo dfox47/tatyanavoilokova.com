@@ -5,8 +5,6 @@ $i = esc_url(get_template_directory_uri()) . '/i'; ?>
 	<!--	--><?php //dynamic_sidebar('footer'); ?>
 <?php endif; ?>
 
-
-
 <footer class="footer">
 	<div class="footer_phone">
 		<?php include "template-parts/phone.php"; ?>
