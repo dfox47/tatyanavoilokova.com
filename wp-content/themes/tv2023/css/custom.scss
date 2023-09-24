@@ -58,7 +58,8 @@ blockquote {
 
 body {
 	background-color: #fff;
-	font-size: 14px;
+	color: $c_text;
+	font-size: 16px;
 	font-family: $font_main;
 	font-weight: 500;
 }
@@ -118,15 +119,29 @@ img {
 	border: 0 none;
 }
 
+p {
+	margin: 1em 0;
+}
+
 
 
 .about {
+	font-size: 18px;
+	line-height: 1.5;
 	margin: 0 auto;
 	max-width: 500px;
+	text-align: justify;
 
 	&__img {
 		border-radius: 8px;
 		width: 100%;
+	}
+
+	p::first-letter {
+		float: left;
+		font-size: 3em;
+		margin: 8px 0 0;
+		padding: 0 4px 0 0;
 	}
 }
 
@@ -134,6 +149,11 @@ img {
 	color: $c_main;
 	font-size: 12px;
 	margin: 30px 0 0;
+}
+
+.error_404 {
+	padding: 100px 0;
+	text-align: center;
 }
 
 .list_type_1 {
@@ -215,6 +235,10 @@ img {
 		letter-spacing: -.07em;
 		opacity: 1;
 	}
+}
+
+.wpcf7-not-valid-tip {
+	color: $c_error
 }
 
 .wrap {
