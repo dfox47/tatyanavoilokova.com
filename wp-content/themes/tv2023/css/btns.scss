@@ -24,26 +24,34 @@
 	}
 
 	&__close {
+		background-color: $c_text;
+		border-radius: 50%;
+		border: 2px solid #fff;
 		height: 50px;
+		position: absolute;
+		right: -25px;
+		top: -25px;
 		width: 50px;
+		z-index: 5;
 
 		&:hover {
 			&::after,
 			&::before {
-				height: 3px;
+				height: 1px;
 			}
 		}
 
 		&::after,
 		&::before {
 			background-color: $c_main;
+			border-radius: 4px;
 			content: "";
-			height: 1px;
-			left: 4px;
+			height: 4px;
+			left: 7px;
 			position: absolute;
-			top: 22px;
+			top: 21px;
 			transition: $transition;
-			width: 40px;
+			width: 32px;
 		}
 
 		&::after {
