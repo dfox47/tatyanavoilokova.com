@@ -27,12 +27,6 @@
 		z-index: 1;
 	}
 
-	.btn_submit {
-		&__title {
-			max-width: none;
-		}
-	}
-
 	.look_form {
 		h2 {
 			color: $c_main;
@@ -273,59 +267,9 @@
 		z-index: 2;
 	}
 
-	&__close {
-		background-color: #000;
-		cursor: pointer;
-		height: 56px;
-		position: absolute;
-		right: 0;
-		top: 0;
-		width: 56px;
-		z-index: 5;
-
-		&:hover {
-			&::after,
-			&::before {
-				height: 3px;
-			}
-		}
-
-		&::after,
-		&::before {
-			background-color: $c_main;
-			content: "";
-			height: 1px;
-			left: 14px;
-			position: absolute;
-			transition: $transition;
-			top: 28px;
-			width: 30px;
-		}
-
-		&::after {
-			transform: rotate(45deg);
-		}
-
-		&::before {
-			transform: rotate(-45deg);
-		}
-
-		@media #{$tablet} {
-			height: 36px;
-			top: -36px;
-			width: 36px;
-
-			&::after,
-			&::before {
-				left: 7px;
-				top: 18px;
-				width: 22px;
-			}
-		}
-	}
-
 	&__content {
 		background-color: #fff;
+		border-radius: 8px;
 		max-height: 100%;
 		position: relative;
 		z-index: 3;
