@@ -33,7 +33,7 @@
 				array(
 					'taxonomy' => 'product_cat',
 					'field' => 'id',
-					'terms' => 20,
+					'terms' => 17, 20,
 				),
 			),
 		);
