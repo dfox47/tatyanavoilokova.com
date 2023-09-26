@@ -35,5 +35,6 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 	<div class="header_right">
 		<?php include "phone.php"; ?>
 		<?php include "social.php"; ?>
+		<?php include "lang_switch.php"; ?>
 	</div>
 </header>
