@@ -11,6 +11,15 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 
 		if (!$popup || !$popupInner || !url) return
 
+		// html overflow hidden
+		document.getElementsByTagName('html')[0].classList.add('popup_active')
+
+		// show loading dots
+		$popupInner.innerHTML = '<div class="loading"><span></span></div>'
+
+		// show popup
+		$popup.classList.add('active')
+
 		fetch(url)
 			.then(response => {
 				// Check if the request was successful (status code 200)
@@ -26,17 +35,12 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 				const tempDiv = document.createElement('div')
 				tempDiv.innerHTML = data
 
-				// show popup
-				$popup.classList.add('active')
-
 				$popupInner.innerHTML = ''
 
 				// put content from URL
 				$popupInner.appendChild(tempDiv.querySelector('.js-product'))
 			})
 			.then(() => {
-				console.log('create slider')
-
 				let $owlCarouselPopup = $('.js-popup-content').find('.js-owl-carousel')
 
 				if ($owlCarouselPopup.length > 0) {
