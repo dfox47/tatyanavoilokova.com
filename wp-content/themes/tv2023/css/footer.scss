@@ -13,6 +13,7 @@
 	font-size: 18px;
 	justify-content: center;
 	line-height: 1.5;
+	padding: 0 0 80px;
 	text-align: justify;
 
 	p::first-letter {
@@ -50,7 +51,7 @@
 				&__placeholder {
 					background-color: $c_main;
 					color: $c_text;
-					top: -18px;
+					top: -22px;
 				}
 			}
 		}
