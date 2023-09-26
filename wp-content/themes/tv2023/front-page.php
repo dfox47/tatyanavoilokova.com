@@ -13,11 +13,11 @@
 		</p>
 
 		<p>
-			Explore my diverse portfolio, where I showcase a range of photography styles, from breathtaking landscapes that will transport you to far-off places, to intimate portraits that capture the soul of our subjects. My artistic approach is marked by creativity, precision, and a deep appreciation for the details that often go unnoticed.
+			Explore my diverse <a class="js-scroll-to" href="#portfolio">portfolio</a>, where I showcase a range of photography styles, from breathtaking landscapes that will transport you to far-off places, to intimate portraits that capture the soul of our subjects. My artistic approach is marked by creativity, precision, and a deep appreciation for the details that often go unnoticed.
 		</p>
 
 		<p class="text-center">
-			<a class="btn btn__more js-scroll-to" href="#portfolio">My portfolio</a>
+			<a class="btn btn__more js-scroll-to" href="#products">Products</a>
 		</p>
 	</div>
 </div>
@@ -43,24 +43,22 @@
 		if ($products_query->have_posts()) :
 			while ($products_query->have_posts()) : $products_query->the_post(); ?>
 				<div class="product_home">
-					<?php global $product; ?>
+					<?php global $product;
+					$id     = $product->get_id();
+					$url    = get_permalink();
+					?>
 
-					<div class="product_home__title"></div>
-					<?php // title
-					the_title();
-
-					$id = $product->get_id();?>
+					<h3><?php the_title(); ?></h3>
 
 					<?php $image = wp_get_attachment_image_src(get_post_thumbnail_id($id), 'single-post-thumbnail'); ?>
 
-					<?php // full desc
-					//				the_content(); ?>
-
-					<span class="product_home__img js-img-scroll" data-src="<?= str_replace('https://' . $_SERVER['HTTP_HOST'], '', $image[0]); ?>"></span>
+					<a class="product_home__img_wrap js-product-home-more" href="<?= $url; ?>">
+						<span class="product_home__img js-img-scroll" data-src="<?= str_replace('https://' . $_SERVER['HTTP_HOST'], '', $image[0]); ?>"></span>
+					</a>
 
 					<div class="product_home__desc"><?php the_excerpt(); ?></div>
 
-					<div class="product_home__more"><a class="btn btn__buy js-product-home-more" href="<?= get_permalink(); ?>">More</a></div>
+					<div class="product_home__more"><a class="btn btn__buy js-product-home-more" href="<?= $url; ?>">More</a></div>
 				</div>
 			<?php endwhile;
 
