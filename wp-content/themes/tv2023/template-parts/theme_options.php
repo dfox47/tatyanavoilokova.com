@@ -81,7 +81,7 @@ function customOptionsContent() { ?>
 					<td>
 						<input id="theme_telegram"
 						       name="theme_telegram"
-						       placeholder="359876700150"
+						       placeholder="Tatiana_Voilokova"
 						       type="text"
 						       value="<?= esc_attr(get_option('theme_telegram')); ?>"
 						/>
