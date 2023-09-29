@@ -7,6 +7,7 @@ $sites = get_sites();
 if ($sites) { ?>
 	<div class="lang_switch">
 		<?php $result = '';
+		$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === 0 ? 'https://' : 'http://';
 
 		// Loop through each site in the network
 		foreach ($sites as $site) {
@@ -14,7 +15,7 @@ if ($sites) { ?>
 			$site_id = $site->blog_id;
 
 			// Get the site's URL
-			$site_url   = str_replace('https://' . $_SERVER['SERVER_NAME'], '', get_site_url($site_id));
+			$site_url   = str_replace($protocol . $_SERVER['SERVER_NAME'], '', get_site_url($site_id));
 			$site_name  = str_replace('/', '', $site_url);
 
 			if ($site_url == '') {
