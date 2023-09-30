@@ -23,30 +23,33 @@
 </div>
 
 <div id="products" class="products_home js-hash-on-scroll">
-	<h2>Products</h2>
+	<?php // put categories from different languages
+	$category_ids = array(17, 20);
 
-	<div class="products_home__list">
-		<?php $args = array(
-			'post_type'         => 'product',
-			'posts_per_page'    => -1,
-			'tax_query'         => array(
-				array(
-					'taxonomy' => 'product_cat',
-					'field' => 'id',
-					'terms' => 17, 20,
-				),
+	$args = array(
+		'post_type'         => 'product',
+		'posts_per_page'    => -1,
+		'tax_query'         => array(
+			array(
+				'taxonomy'  => 'product_cat',
+				'field'     => 'id',
+				'terms'     => $category_ids,
+				'operator'  => 'IN'
 			),
-		);
+		),
+	);
 
-		$products_query = new WP_Query($args);
+	$products_query = new WP_Query($args);
 
-		if ($products_query->have_posts()) :
-			while ($products_query->have_posts()) : $products_query->the_post(); ?>
+	if ($products_query->have_posts()) : ?>
+		<h2>Products</h2>
+
+		<div class="products_home__list">
+			<?php while ($products_query->have_posts()) : $products_query->the_post(); ?>
 				<div class="product_home">
 					<?php global $product;
 					$id     = $product->get_id();
-					$url    = get_permalink();
-					?>
+					$url    = get_permalink(); ?>
 
 					<h3><?php the_title(); ?></h3>
 
@@ -62,9 +65,9 @@
 				</div>
 			<?php endwhile;
 
-			wp_reset_postdata();
-		endif; ?>
-	</div>
+			wp_reset_postdata(); ?>
+		</div>
+	<?php endif; ?>
 </div>
 
 <main class="main">
