@@ -1,9 +1,8 @@
 <?php // thumb img url
 $thumbUrl = '';
-$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === 0 ? 'https://' : 'http://';
 
 if (get_the_post_thumbnail_url()) {
-	$thumbUrl = str_replace($protocol . $_SERVER['SERVER_NAME'], '', get_the_post_thumbnail_url());
+	$thumbUrl = str_replace('https://' . $_SERVER['SERVER_NAME'], '', get_the_post_thumbnail_url());
 }
 
 // page type
