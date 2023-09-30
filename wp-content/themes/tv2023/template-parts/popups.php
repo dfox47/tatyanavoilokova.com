@@ -1,5 +1,5 @@
 <?php // feedback popup
-if (shortcode_exists('[contact-form-7 id="f231649"]')) { ?>
+if (shortcode_exists('[contact-form-7 id="1"]')) { ?>
 	<div class="popup popup--feedback js-popup" data-popup="feedback">
 		<div class="popup__bg js-popup-close"></div>
 
@@ -8,7 +8,7 @@ if (shortcode_exists('[contact-form-7 id="f231649"]')) { ?>
 
 			<div class="popup__content_wrap">
 				<div class="contacts_form">
-					<?= do_shortcode('[contact-form-7 id="f231649"]'); ?>
+					<?= do_shortcode('[contact-form-7 id="1"]'); ?>
 				</div>
 			</div>
 		</div>
