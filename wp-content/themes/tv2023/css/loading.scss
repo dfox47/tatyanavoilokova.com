@@ -1,0 +1,37 @@
+@keyframes loading {
+	0%, 100% {
+		opacity: .5;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 1;
+		transform: scale(1.2);
+	}
+}
+
+.loading {
+	display: flex;
+	justify-content: center;
+
+	&::after,
+	&::before,
+	span {
+		animation: loading 2s infinite;
+		background-color: $c_main;
+		border-radius: 50%;
+		content: "";
+		display: block;
+		height: 20px;
+		margin: 0 10px;
+		transition: $transition;
+		width: 20px;
+	}
+
+	&::after {
+		animation-delay: .7s;
+	}
+
+	&::before {
+		animation-delay: 1.4s;
+	}
+}
