@@ -11,10 +11,8 @@ if ($sites) {
 		// Get the site's ID
 		$site_id = $site->blog_id;
 
-		$protocol = stripos($_SERVER['SERVER_PROTOCOL'],'https') === 0 ? 'https://' : 'http://';
-
 		// Get the site's URL
-		$site_url = str_replace($protocol . $_SERVER['SERVER_NAME'], '', get_site_url($site_id));
+		$site_url = str_replace('https://' . $_SERVER['SERVER_NAME'], '', get_site_url($site_id));
 
 		if ($current_site_id == $site_id) {
 			$site_name = str_replace('/', '', $site_url);
