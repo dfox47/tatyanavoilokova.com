@@ -43,6 +43,8 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 			.then(() => {
 				const $inputEmail           = document.querySelector('.js-product-input-email')
 				const $inputName            = document.querySelector('.js-product-input-name')
+				const $infoSuccess          = document.querySelector('.js-product-info-success')
+				const $infoError            = document.querySelector('.js-product-info-error')
 				// const $submit               = document.querySelector('.js-product-submit')
 
 				const form          = document.querySelector('.js-product-form')
@@ -50,6 +52,16 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 
 				form.addEventListener('submit', function (e) {
 					e.preventDefault()
+
+					if ($inputEmail.value === '' || $inputName.value === '') {
+						$infoError.classList.add('active')
+
+						setTimeout(() => {
+							$infoError.classList.remove('active')
+						}, 2000)
+
+						return
+					}
 
 					const formData = new FormData(form)
 
@@ -78,7 +90,7 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 
 
 
-				// init carousel
+				// init carousel [START]
 				let $owlCarouselPopup = $('.js-popup-content').find('.js-owl-carousel')
 
 				if ($owlCarouselPopup.length > 0) {
@@ -93,6 +105,7 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 						})
 					})
 				}
+				// init carousel [END]
 			})
 			.catch(error => {
 				console.error(error)

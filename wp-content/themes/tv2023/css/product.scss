@@ -76,9 +76,8 @@
 }
 
 .product_home {
-	max-width: 220px;
 	padding: 0 0 20px;
-	width: 100%;
+	width: 220px;
 
 	&__img {
 		border-radius: $border_radius;
@@ -144,19 +143,13 @@
 	&__item {}
 
 	&__list {
-		display: grid;
-		grid-template-columns: repeat(6, minmax(0, 1fr));
+		display: flex;
+		flex-wrap: wrap;
 		grid-gap: 30px;
 		justify-content: center;
 		margin: 0 auto;
 		max-width: 1400px;
 		padding: 0 30px;
 		width: 100%;
-
-		@media #{$tablet} {
-			display: flex;
-			flex-wrap: wrap;
-			justify-content: center;
-		}
 	}
 }

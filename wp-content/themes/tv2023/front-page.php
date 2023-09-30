@@ -17,7 +17,12 @@
 		</p>
 
 		<p class="text-center">
-			<a class="btn btn__more js-scroll-to" href="#products">Products</a>
+			<a class="btn btn__more js-scroll-to" href="#products">
+				<span class="lang_bg_only">Продукти</span>
+				<span class="lang_en_only">Products</span>
+				<span class="lang_gr_only">Προϊόντα</span>
+				<span class="lang_ru_only">Продукты</span>
+			</a>
 		</p>
 	</div>
 </div>
@@ -42,7 +47,12 @@
 	$products_query = new WP_Query($args);
 
 	if ($products_query->have_posts()) : ?>
-		<h2>Products</h2>
+		<h2>
+			<span class="lang_bg_only">Продукти</span>
+			<span class="lang_en_only">Products</span>
+			<span class="lang_gr_only">Προϊόντα</span>
+			<span class="lang_ru_only">Продукты</span>
+		</h2>
 
 		<div class="products_home__list">
 			<?php while ($products_query->have_posts()) : $products_query->the_post(); ?>
@@ -61,7 +71,15 @@
 
 					<div class="product_home__desc"><?php the_excerpt(); ?></div>
 
-					<div class="product_home__more"><a class="btn btn__buy js-product-home-more" href="<?= $url; ?>">More</a></div>
+					<div class="product_home__more">
+						<a class="btn btn__buy js-product-home-more" href="<?= $url; ?>">
+							<span class="lang_bg_only">Повече</span>
+							<span class="lang_en_only">More</span>
+							<span class="lang_gr_only">Περισσότερες</span>
+							<span class="lang_ru_only">Подробнее</span>
+
+						</a>
+					</div>
 				</div>
 			<?php endwhile;
 

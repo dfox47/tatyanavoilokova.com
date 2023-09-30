@@ -8,7 +8,8 @@
 	line-height: 1.5;
 	margin: 30px auto;
 	max-width: 350px;
-	padding: 0 10px 80px;
+	padding: 0 10px;
+	position: relative;
 	text-align: justify;
 
 	p::first-letter {
@@ -21,11 +22,30 @@
 
 	&--product {
 		margin: 0;
-		max-width: 220px;
+		max-width: 280px;
 		padding: 0;
+	}
 
-		.btn {
-			width: 100%;
+	&__info {
+		align-items: center;
+		background-color: #fff;
+		border-radius: $border_radius;
+		border: 1px solid $c_main;
+		display: none;
+		height: 100%;
+		justify-content: center;
+		left: 0;
+		position: absolute;
+		top: 0;
+		width: 100%;
+		z-index: 3;
+
+		&--error {
+			border-color: $c_error;
+		}
+
+		&.active {
+			display: flex;
 		}
 	}
 
@@ -57,9 +77,13 @@
 				&__placeholder {
 					background-color: $c_main;
 					color: $c_text;
-					top: -22px;
+					top: -18px;
 				}
 			}
+		}
+
+		&.error {
+			border-color: $c_error;
 		}
 	}
 
@@ -67,12 +91,25 @@
 		border-radius: 4px 4px 0 0;
 		font-size: 12px;
 		left: 6px;
-		padding: 2px 6px;
+		padding: 0 6px;
 		position: absolute;
 		text-transform: uppercase;
 		top: 6px;
 		transition: $transition;
 		z-index: 3;
+	}
+
+	&__submit {
+		width: 100%;
+
+		input {
+			left: -9999px;
+			position: absolute;
+		}
+	}
+
+	.btn {
+		width: 100%;
 	}
 
 	.wpcf7-form {
