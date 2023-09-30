@@ -1,0 +1,88 @@
+.contact_form {
+	align-items: center;
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	font-size: 18px;
+	justify-content: center;
+	line-height: 1.5;
+	margin: 30px auto;
+	max-width: 350px;
+	padding: 0 10px 80px;
+	text-align: justify;
+
+	p::first-letter {
+		color: $c_main;
+		float: left;
+		font-size: 3em;
+		margin: 8px 0 0;
+		padding: 0 4px 0 0;
+	}
+
+	&--product {
+		margin: 0;
+		max-width: 220px;
+		padding: 0;
+
+		.btn {
+			width: 100%;
+		}
+	}
+
+	&__input {
+		border-radius: $border_radius;
+		border: 1px solid $c_border;
+		color: $c_text;
+		display: block;
+		font-size: 20px;
+		outline: none;
+		padding: .3em .5em;
+		position: relative;
+		resize: none;
+		width: 100%;
+		z-index: 1;
+	}
+
+	&__item {
+		margin: 0 0 30px;
+		position: relative;
+		width: 100%;
+
+		&.focused {
+			.contact_form {
+				&__input {
+					border-color: $c_main;
+				}
+
+				&__placeholder {
+					background-color: $c_main;
+					color: $c_text;
+					top: -22px;
+				}
+			}
+		}
+	}
+
+	&__placeholder {
+		border-radius: 4px 4px 0 0;
+		font-size: 12px;
+		left: 6px;
+		padding: 2px 6px;
+		position: absolute;
+		text-transform: uppercase;
+		top: 6px;
+		transition: $transition;
+		z-index: 3;
+	}
+
+	.wpcf7-form {
+		display: flex;
+		flex-direction: column;
+		max-width: 350px;
+	}
+
+	.wpcf7-form-control-wrap {
+		display: block;
+		width: 100%;
+	}
+}
