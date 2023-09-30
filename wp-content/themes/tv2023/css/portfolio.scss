@@ -1,6 +1,22 @@
 .portfolio {
 	padding: 0 0 20px;
 
+	.owl-next {
+		@media #{$tablet} {
+			left: auto;
+			right: 10px;
+			margin-left: 0;
+		}
+	}
+
+	.owl-prev {
+		@media #{$tablet} {
+			left: 10px;
+			margin-right: 0;
+			right: auto;
+		}
+	}
+
 	.wp-block-group__inner-container {
 		padding: 0 10px;
 	}
@@ -12,7 +28,7 @@
 	padding: 0 0 30px;
 
 	&__item {
-		border-radius: 8px;
+		border-radius: $border_radius;
 		height: 100%;
 		left: 0;
 		object-fit: contain;
@@ -34,7 +50,7 @@
 	}
 
 	.owl-stage-outer {
-		border-radius: 8px;
+		border-radius: $border_radius;
 	}
 
 	&.wp-block-gallery {
