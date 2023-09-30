@@ -10,7 +10,7 @@
 
 	&__buy {
 		background-color: $c_text;
-		border-radius: 8px;
+		border-radius: $border_radius;
 		color: $c_main;
 		letter-spacing: .03em;
 		min-width: 150px;
@@ -35,10 +35,7 @@
 		z-index: 5;
 
 		&:hover {
-			&::after,
-			&::before {
-				height: 1px;
-			}
+			transform: rotate(90deg);
 		}
 
 		&::after,
@@ -61,15 +58,21 @@
 		&::before {
 			transform: rotate(-45deg);
 		}
+		
+		@media #{$tablet} {
+			top: -10px;
+			right: -10px;
+		}
 	}
 
 	&__more {
 		background: none;
 		border: 1px solid $c_main;
-		border-radius: 8px;
+		border-radius: $border_radius;
 		color: $c_main;
 		letter-spacing: .03em;
-		padding: .8em 3.8em;
+		min-width: 150px;
+		padding: .8em;
 
 		&:hover {
 			background-color: $c_main;

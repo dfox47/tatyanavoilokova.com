@@ -269,7 +269,7 @@
 
 	&__content {
 		background-color: #fff;
-		border-radius: 8px;
+		border-radius: $border_radius;
 		max-height: 100%;
 		position: relative;
 		z-index: 3;
@@ -312,6 +312,10 @@
 		overflow-y: auto;
 		padding: 30px;
 		position: relative;
+
+		@media #{$mobile} {
+			padding: 0;
+		}
 	}
 
 	@media #{$mobile} {

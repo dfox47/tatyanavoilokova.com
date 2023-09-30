@@ -10,12 +10,12 @@ $fonts:             $themeFolder + '/fonts';
 // colors
 $c_border:          rgba(#262730, .3);
 $c_error:           #eb68a0;
-//$c_info:            #7a4d9f;
 $c_info:            #6226d4;
-//$c_main:            #a8dacd;
 $c_main:            #26d4b9;
 $c_secondary:       #d7c0d0;
 $c_text:            #22235f;
+
+$border_radius:     8px;
 
 $transition:        all .3s ease-in-out;
 
