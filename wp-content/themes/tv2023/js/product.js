@@ -41,17 +41,55 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 				$popupInner.appendChild(tempDiv.querySelector('.js-product'))
 			})
 			.then(() => {
+				const $inputEmail           = document.querySelector('.js-product-input-email')
+				const $inputName            = document.querySelector('.js-product-input-name')
+				// const $submit               = document.querySelector('.js-product-submit')
+
+				const form          = document.querySelector('.js-product-form')
+				// const responseDiv   = document.querySelector('.js-response')
+
+				form.addEventListener('submit', function (e) {
+					e.preventDefault()
+
+					const formData = new FormData(form)
+
+					fetch('https://tatyanavoilokova.com/wp-content/themes/tv2023/template-parts/contact_form.php', {
+						method: 'POST',
+						body: formData
+					})
+						.then(response => response.text())
+						.then(data => {
+							console.log('data | ', data)
+							// responseDiv.textContent = data
+						})
+						.catch(error => {
+							console.error('Error:', error)
+						})
+				})
+
+
+
+				let $inputElements = document.querySelectorAll('.js-input')
+
+				$inputElements.forEach(function(e) {
+					e.addEventListener('focus', addClassOnFocus)
+					e.addEventListener('blur', removeClassOnBlurOrEmpty)
+				})
+
+
+
+				// init carousel
 				let $owlCarouselPopup = $('.js-popup-content').find('.js-owl-carousel')
 
 				if ($owlCarouselPopup.length > 0) {
 					$(document).ready(function() {
 						$owlCarouselPopup.owlCarousel({
-							autoHeight: true,
-							dots:       false,
-							items:      1,
-							loop:       true,
-							nav:        true,
-							navText:    ['', '']
+							autoHeight:     true,
+							dots:           true,
+							items:          1,
+							loop:           true,
+							nav:            true,
+							navText:        ['', '']
 						})
 					})
 				}
@@ -61,4 +99,8 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 			})
 	})
 })
+
+
+
+
 // product [END]
