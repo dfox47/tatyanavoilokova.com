@@ -63,7 +63,7 @@
 	&__img {
 		height: 100%;
 		left: 0;
-		object-fit: cover;
+		object-fit: contain;
 		position: absolute;
 		top: 0;
 		width: 100%;
@@ -148,7 +148,7 @@
 		grid-gap: 30px;
 		justify-content: center;
 		margin: 0 auto;
-		max-width: 1400px;
+		max-width: 1900px;
 		padding: 0 30px;
 		width: 100%;
 	}
