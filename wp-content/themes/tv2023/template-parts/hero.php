@@ -10,10 +10,10 @@
 		</div>
 
 		<div class="hero__subtitle">
-			<span class="lang_bg_only">фотограф</span>
-			<span class="lang_en_only">photographer</span>
-			<span class="lang_gr_only">φωτογράφος</span>
-			<span class="lang_ru_only">фотограф</span>
+			<span class="lang_bg_only">арт фотограф</span>
+			<span class="lang_en_only">art photographer</span>
+			<span class="lang_gr_only">φωτογράφος τέχνης</span>
+			<span class="lang_ru_only">арт фотограф</span>
 		</div>
 
 		<a class="btn btn__more js-scroll-to" href="#about">
