@@ -6,7 +6,7 @@ const $popupShow        = document.querySelectorAll('.js-popup-show')
 const $popups           = document.querySelectorAll('.js-popup')
 
 // show popup
-// example of HTML | x
+// example of HTML | <button class="js-popup-show" data-popup="with_content" data-type="with_img"></button
 $popupShow.forEach((button) => {
 	const popupId = button.dataset.popup
 
@@ -61,6 +61,9 @@ $popupClose.forEach((button) => {
 			// hide all popups
 			e.classList.remove('active')
 
+			// clear popup type
+			e.dataset.type = ''
+
 			// clear popup content
 			$popupContent.innerHTML = ''
 		})
@@ -68,5 +71,24 @@ $popupClose.forEach((button) => {
 		// remove class from html tag
 		$html.classList.remove('popup_active')
 	})
+})
+
+// close popup on ESC
+document.addEventListener('keydown', function(event) {
+	if (event.key === 'Escape') {
+		$popups.forEach((e) => {
+			// hide all popups
+			e.classList.remove('active')
+
+			// clear popup type
+			e.dataset.type = ''
+
+			// clear popup content
+			$popupContent.innerHTML = ''
+		})
+
+		// remove class from html tag
+		$html.classList.remove('popup_active')
+	}
 })
 // popup.js [END]
