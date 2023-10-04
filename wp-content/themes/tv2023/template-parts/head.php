@@ -12,8 +12,6 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 	<div class="header_left">
 		<a class="logo" href="/"><span class="js-img-scroll" data-src="" title=""></span></a>
 
-		<div class="header_menu_toggle js-header-menu-toggle"></div>
-
 		<?php // header_menu
 //		wp_nav_menu(array(
 //			'container'         => false,
@@ -24,12 +22,7 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 //			'menu_class'        => 'header_menu',
 //		)); ?>
 
-		<ul class="header_menu">
-			<li><a class="js-scroll-to js-header-menu-toggle" href="#top">Home</a></li>
-			<li><a class="js-scroll-to js-header-menu-toggle" href="#about">About me</a></li>
-			<li><a class="js-scroll-to js-header-menu-toggle" href="#portfolio">Portfolio</a></li>
-			<li><a class="js-scroll-to js-header-menu-toggle" href="#contacts">Contacts</a></li>
-		</ul>
+		<?php include "header_menu.php"; ?>
 	</div>
 
 	<div class="header_right">
