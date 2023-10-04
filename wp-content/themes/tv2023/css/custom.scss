@@ -159,6 +159,88 @@ p {
 	}
 }
 
+// awards [START]
+.awards {}
+
+.awards_carousel {
+	margin: 0 auto;
+	max-width: 800px;
+
+	&__img {
+		max-width: 180px;
+	}
+
+	&__link {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		padding: 10px;
+		transition: $transition;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+
+	.owl-dots {
+		bottom: -20px;
+	}
+
+	.owl-next,
+	.owl-prev {
+		margin-top: -28px;
+
+		@media #{$tablet} {
+			height: 30px;
+			margin-top: -15px;
+			width: 30px;
+
+			&::after,
+			&::before {
+				width: 12px;
+			}
+
+			&:hover {
+				&::after,
+				&::before {
+					height: 3px;
+				}
+			}
+		}
+	}
+
+	.owl-next {
+		@media #{$tablet} {
+			left: auto;
+			right: 10px;
+
+			&::after {
+				margin: 3px 0 0 -5px;
+			}
+
+			&::before {
+				margin: -5px 0 0 -5px;
+			}
+		}
+	}
+
+	.owl-prev {
+		@media #{$tablet} {
+			left: 10px;
+			right: auto;
+
+			&::after {
+				margin: 3px 0 0 -7px;
+			}
+
+			&::before {
+				margin: -5px 0 0 -7px;
+			}
+		}
+	}
+}
+// awards [END]
+
 .copyright {
 	color: $c_main;
 	font-size: 12px;

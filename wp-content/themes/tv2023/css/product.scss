@@ -21,6 +21,7 @@
 	}
 
 	.owl-item {
+		background-color: $c_border;
 		position: relative;
 
 		&::after {
