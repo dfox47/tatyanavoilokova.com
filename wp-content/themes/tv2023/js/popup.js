@@ -6,7 +6,7 @@ const $popupShow        = document.querySelectorAll('.js-popup-show')
 const $popups           = document.querySelectorAll('.js-popup')
 
 // show popup
-// example of HTML | <button class="js-popup-show" data-popup="with_content" data-type="with_img"></button
+// example of HTML | <button class="js-popup-show" data-popup="with_content"></button
 $popupShow.forEach((button) => {
 	const popupId = button.dataset.popup
 
