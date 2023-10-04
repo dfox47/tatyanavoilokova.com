@@ -31,3 +31,5 @@ $currentUrl = $_SERVER['REQUEST_URI']; ?>
 		<?php include "lang_switch.php"; ?>
 	</div>
 </header>
+
+<div class="header_bg js-header-menu-toggle"></div>

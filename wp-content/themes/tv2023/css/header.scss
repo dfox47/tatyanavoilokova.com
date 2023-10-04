@@ -65,6 +65,10 @@
 		display: flex;
 	}
 
+	.header_bg {
+		display: block;
+	}
+
 	.header_menu_toggle {
 		&::after,
 		&::before {
@@ -76,6 +80,18 @@
 			transform: rotate(-45deg);
 		}
 	}
+}
+
+.header_bg {
+	background: #000;
+	display: none;
+	height: 100%;
+	left: 0;
+	opacity: .5;
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 4;
 }
 
 .header_menu_toggle {
