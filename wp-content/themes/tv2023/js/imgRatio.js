@@ -3,7 +3,6 @@ const imgRatio = () => {
 	const $img = document.querySelectorAll('.js-img-ratio')
 
 	const windowRatio = window.innerWidth / window.innerHeight
-	console.log('windowRatio: ', windowRatio)
 
 	$img.forEach((e) => {
 		// Create a new Image object
