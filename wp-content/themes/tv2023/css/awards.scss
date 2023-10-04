@@ -1,0 +1,110 @@
+.awards {}
+
+.awards_carousel {
+	margin: 0 auto;
+	max-width: 800px;
+
+	&__img {
+		border-radius: $border_radius;
+		max-width: 180px;
+		box-shadow: 2px 2px 4px $c_border;
+	}
+
+	&__link {
+		align-items: center;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		min-height: 250px;
+		padding: 10px;
+		position: relative;
+		transition: $transition;
+
+		&:hover {
+			opacity: .7;
+		}
+	}
+
+	.owl-dots {
+		bottom: -30px;
+		padding: 0;
+	}
+
+	.owl-next,
+	.owl-prev {
+		margin-top: -28px;
+
+		@media #{$tablet} {
+			height: 30px;
+			margin-top: -15px;
+			width: 30px;
+
+			&::after,
+			&::before {
+				width: 12px;
+			}
+
+			&:hover {
+				&::after,
+				&::before {
+					height: 3px;
+				}
+
+				&::after {
+					margin-top: 3px;
+				}
+
+				&::before {
+					margin-top: -5px;
+				}
+			}
+		}
+	}
+
+	.owl-next {
+		@media #{$tablet} {
+			left: auto;
+			right: 10px;
+
+			&::after {
+				margin: 3px 0 0 -5px;
+			}
+
+			&::before {
+				margin: -5px 0 0 -5px;
+			}
+		}
+	}
+
+	.owl-prev {
+		@media #{$tablet} {
+			left: 10px;
+			right: auto;
+
+			&::after {
+				margin: 3px 0 0 -7px;
+			}
+
+			&::before {
+				margin: -5px 0 0 -7px;
+			}
+		}
+	}
+}
+
+.awards_img {
+	border: 10px solid #fff;
+	border-radius: $border_radius;
+	overflow: hidden;
+	position: relative;
+
+	&[data-ratio="vertical"] {
+		height: 100%;
+		width: auto;
+	}
+
+	&[data-ratio="horizontal"] {
+		height: auto;
+		width: 100%;
+	}
+}

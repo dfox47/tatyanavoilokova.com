@@ -14,26 +14,16 @@ $(document).ready(function () {
 
 	// awards carousel
 	$('.js-awards-carousel').owlCarousel({
-		// autoplay:           true,
-		autoplayHoverPause: true,
-		autoplayTimeout:    3500,
-		items:              4,
-		loop:               true,
-		nav:                true,
-		navText:            ['', ''],
+		items:          4,
+		loop:           true,
+		margin:         20,
+		nav:            true,
+		navText:        ['', ''],
 		responsive:{
-			0:{
-				items:  1
-			},
-			400:{
-				items:  2
-			},
-			600:{
-				items:  3
-			},
-			800:{
-				items:  4
-			}
+			0:   {items: 1},
+			400: {items: 2},
+			600: {items: 3},
+			800: {items: 4}
 		}
 	})
 })
