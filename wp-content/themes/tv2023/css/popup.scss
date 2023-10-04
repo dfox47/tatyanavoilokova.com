@@ -5,7 +5,7 @@
 	justify-content: center;
 	left: 0;
 	overflow: hidden;
-	padding: 36px;
+	padding: 30px;
 	position: fixed;
 	top: 0;
 	width: 100%;
@@ -107,6 +107,27 @@
 			width: 100%;
 
 			@media #{$mobile} {
+				padding: 0;
+			}
+		}
+	}
+
+	&--img {
+		.popup {
+			&__content {
+				background: 0 none;
+				height: 100%;
+				
+				@media #{$mobile} {
+					padding: 0;
+				}
+			}
+
+			&__content_wrap {
+				align-items: center;
+				display: flex;
+				justify-content: center;
+				overflow: hidden;
 				padding: 0;
 			}
 		}
@@ -220,16 +241,6 @@
 		}
 	}
 
-	&[data-type="with_img"] {
-		.popup__content {
-		}
-
-		.popup__content_wrap {
-			overflow: hidden;
-			padding: 0;
-		}
-	}
-
 	&__bg {
 		height: 100%;
 		left: 0;
@@ -292,8 +303,7 @@
 	}
 
 	@media #{$mobile} {
-		padding-left: 12px;
-		padding-right: 12px;
+		padding: 12px;
 	}
 }
 
