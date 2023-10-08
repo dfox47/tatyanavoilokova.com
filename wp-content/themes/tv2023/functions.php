@@ -39,3 +39,6 @@ function removeScript() {
 	add_theme_support('html5', ['script', 'style']);
 }
 add_action('after_setup_theme', 'removeScript');
+
+// Products home shortcode
+include_once('template-parts/products_home.php');
