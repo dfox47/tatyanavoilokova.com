@@ -16,7 +16,6 @@ const bubblesGenerator = (placeTo, interval, bubbleWidth) => {
 		const duration  = Math.floor(Math.random() * 5000 + 3000)
 
 		bubble.classList.add('bubble')
-		bubble.classList.add('js-bubble')
 		bubble.style.animationDuration  = duration + 'ms'
 		bubble.style.left               = Math.floor(Math.random() * $bubbles.clientWidth) + 'px'
 		bubble.style.width              = Math.floor(Math.random() * width + 5) + 'px'
@@ -31,6 +30,10 @@ const bubblesGenerator = (placeTo, interval, bubbleWidth) => {
 
 			if (bubbleClicks > 1) {
 				clearInterval(createSmallBubbles)
+
+				$bubbles.innerHTML = ''
+
+				document.querySelector('.js-hero-bubbles').classList.add('active')
 
 				// make bubbles to hole hero block
 				bubblesGenerator('.js-hero-bubbles', 200, 100)
