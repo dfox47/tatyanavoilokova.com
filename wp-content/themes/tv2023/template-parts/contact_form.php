@@ -1,7 +1,7 @@
 <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //	$to = 'dfox@foxartbox.com';
-	$to = 'a9942212@gmail.com';
-//	$to = 'info@tatyanavoilokova.com';
+//	$to = 'a9942212@gmail.com';
+	$to = 'info@tatyanavoilokova.com';
 
 	$subject    = '[tatyanavoilokova.com] Product order';
 	$userName   = $_POST['user-name'];
