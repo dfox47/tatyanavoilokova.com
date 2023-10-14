@@ -244,6 +244,16 @@ p {
 	}
 }
 
+.wpcf7 {
+	form.sent {
+		.wpcf7-response-output {
+			background-color: $c_main;
+			border-color: $c_text;
+			border-radius: $border_radius;
+		}
+	}
+}
+
 .wpcf7-not-valid-tip {
 	color: $c_error
 }
