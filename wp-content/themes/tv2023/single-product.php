@@ -73,9 +73,23 @@ $price              = $product->get_price(); ?>
 
 				<input type="hidden" name="product-link" value="<?= 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
 
-				<div class="contact_form__info contact_form__info--error js-product-info-error">Please, fill all the fields</div>
+
+
+				<div class="contact_form__info contact_form__info--error js-product-info-error">
+					<span class="lang_bg_only">Моля, попълнете всички полета</span>
+					<span class="lang_en_only">Please, fill all the fields</span>
+					<span class="lang_gr_only">Παρακαλώ συμπληρώστε όλα τα πεδία</span>
+					<span class="lang_ru_only">Пожалуйста, заполните все поля</span>
+				</div>
+
 				<div class="contact_form__info contact_form__info--loading js-product-info-loading"><div class="loading"><span></span></div></div>
-				<div class="contact_form__info js-product-info-success">Awesome!<br>I will contact you shortly.</div>
+
+				<div class="contact_form__info js-product-info-success">
+					<span class="lang_bg_only">Страхотно!<br>Ще се свържа с вас скоро.</span>
+					<span class="lang_en_only">Awesome!<br>I will contact you shortly.</span>
+					<span class="lang_gr_only">Υπέροχο!<br>Θα επικοινωνήσω μαζί σας σύντομα.</span>
+					<span class="lang_ru_only">Отлично!<br>Я свяжусь с вами в ближайшее время.</span>
+				</div>
 			</form>
 		</div>
 	</div>
