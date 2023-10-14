@@ -1,34 +1,29 @@
-
-var fs                  = require('fs');
-let concat              = require('gulp-concat')
-let config              = JSON.parse(fs.readFileSync('../config.json'))
-let cssMinify           = require('gulp-csso')
-let ftp                 = require('vinyl-ftp')
-let gulp                = require('gulp')
-let gutil               = require('gulp-util')
-let rename              = require('gulp-rename')
-let sass                = require('gulp-sass')(require('sass'))
-let uglify              = require('gulp-uglify')
+const fs                = require('fs')
+const concat            = require('gulp-concat')
+const config            = JSON.parse(fs.readFileSync('../config.json'))
+const cssMinify         = require('gulp-csso')
+const ftp               = require('vinyl-ftp')
+const gulp              = require('gulp')
+const gutil             = require('gulp-util')
+const rename            = require('gulp-rename')
+const sass              = require('gulp-sass')(require('sass'))
+const uglify            = require('gulp-uglify')
 
 // FTP config
-let host                = config.host
-let password            = config.password
-let port                = config.port
-let user                = config.user
+const host              = config.host
+const password          = config.password
+const port              = config.port
+const user              = config.user
 
-let remoteFolder                = '/www/p3week.ru/templates/p3week_2k18/'
-let remoteFolderCss             = remoteFolder + 'css/'
-let remoteFolderJs              = remoteFolder + 'js/'
-let remoteFolderLang            = '/www/p3week.ru/language/overrides/'
-let remoteFolderModules         = remoteFolder + 'html/'
-let remoteFolderTemplateParts   = remoteFolder + 'template-parts/'
+const remoteTheme           = '/tatyanavoilokova.com/public_html/wp-content/themes/tv2023/'
+const remoteCss             = remoteTheme + 'css/'
+const remoteJs              = remoteTheme + 'js/'
+const remoteTemplateParts   = remoteTheme + 'template-parts/'
 
-let localFolder                 = 'templates/p3week_2k18/'
-let localFolderCss              = localFolder + 'css/'
-let localFolderJs               = localFolder + 'js/'
-let localFolderLang             = 'language/overrides/'
-let localFolderModules          = localFolder + 'html/'
-let localFolderTemplateParts    = localFolder + 'template-parts/'
+const localTheme            = 'wp-content/themes/tv2023/'
+const localCss              = localTheme + 'css/'
+const localJs               = localTheme + 'js/'
+const localTemplateParts    = localTheme + 'template-parts/'
 
 
 
@@ -48,69 +43,51 @@ let conn = getFtpConnection()
 
 
 gulp.task('css', function () {
-	return gulp.src(localFolderCss + 'styles.scss')
+	return gulp.src(localCss + 'style.scss')
 		.pipe(sass())
 		.pipe(cssMinify())
-		.pipe(rename({
-			suffix: ".min"
-		}))
-		.pipe(conn.dest(remoteFolder))
+		.pipe(conn.dest(remoteTheme))
 })
 
-gulp.task('copy_css', function () {
-	return gulp.src(localFolderCss + '**/*')
-		.pipe(conn.dest(remoteFolderCss))
+gulp.task('css_copy', function () {
+	return gulp.src(localCss + '**/*')
+		.pipe(conn.dest(remoteCss))
 })
 
-gulp.task('copy_html', function () {
-	return gulp.src(localFolder + '*.php')
-		.pipe(conn.dest(remoteFolder))
+gulp.task('html_copy', function () {
+	return gulp.src(localTheme + '*.php')
+		.pipe(conn.dest(remoteTheme))
 })
 
-gulp.task('copy_modules', function () {
-	return gulp.src(localFolderModules + '**/*.php')
-		.pipe(conn.dest(remoteFolderModules))
+gulp.task('template_parts_copy', function () {
+	return gulp.src(localTemplateParts + '**/*')
+		.pipe(conn.dest(remoteTemplateParts))
 })
 
-gulp.task('copy_template_parts', function () {
-	return gulp.src(localFolderTemplateParts + '**/*')
-		.pipe(conn.dest(remoteFolderTemplateParts))
-})
-
-gulp.task('copy_js', function () {
-	return gulp.src(localFolderJs + '**/*.js')
-		.pipe(conn.dest(remoteFolderJs))
-})
-
-gulp.task('lang', function () {
-	return gulp.src(localFolderLang + '*.ini')
-		.pipe(conn.dest(remoteFolderLang))
+gulp.task('js_copy', function () {
+	return gulp.src(localJs + '**/*.js')
+		.pipe(conn.dest(remoteJs))
 })
 
 gulp.task('js', function () {
 	return gulp.src([
-			// localFolderJs + 'jquery.3.2.1.js',
-			localFolderJs + 'owl.carousel.js',
-			localFolderJs + 'jspdf.min.js',
-			localFolderJs + '**/*.js'
+			localJs + 'jquery-3.7.1.min.js',
+			localJs + 'owl.carousel.min.js',
+			localJs + '**/*.js'
 		])
 		.pipe(concat('all.js'))
-		// .pipe(uglify())
+		.pipe(uglify())
 		.pipe(rename({
 			suffix: ".min"
 		}))
-		.pipe(conn.dest(remoteFolder))
+		.pipe(conn.dest(remoteTheme))
 })
 
 gulp.task('watch', function() {
-	gulp.watch(localFolder + '*.php',               gulp.series('copy_html'))
-	gulp.watch(localFolderCss + '**/*',             gulp.series('css', 'copy_css'))
-	gulp.watch(localFolderJs + '**/*.js',           gulp.series('js', 'copy_js'))
-	gulp.watch(localFolderLang + '*.ini',           gulp.series('lang'))
-	gulp.watch(localFolderModules + '**/*',         gulp.series('copy_modules'))
-	gulp.watch(localFolderTemplateParts + '**/*',   gulp.series('copy_template_parts'))
+	gulp.watch(localCss + '**/*',               gulp.series('css', 'css_copy'))
+	gulp.watch(localTheme + '*.php',            gulp.series('html_copy'))
+	gulp.watch(localJs + '**/*.js',             gulp.series('js', 'js_copy'))
+	gulp.watch(localTemplateParts + '**/*',     gulp.series('template_parts_copy'))
 })
 
-gulp.task('default', gulp.series(
-	'watch'
-))
+gulp.task('default', gulp.series('watch'))
