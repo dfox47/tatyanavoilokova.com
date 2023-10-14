@@ -1058,7 +1058,7 @@ $admin-theme-color: var(--wp-admin-theme-color);
 .form-toggle.is-compact {
 
 	+ .form-toggle__label .form-toggle__switch {
-		border-radius: $border_radius;
+		border-radius: 8px;
 		width: 24px;
 		height: 16px;
 
