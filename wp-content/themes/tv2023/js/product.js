@@ -41,14 +41,12 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 				$popupInner.appendChild(tempDiv.querySelector('.js-product'))
 			})
 			.then(() => {
+				const $infoError            = document.querySelector('.js-product-info-error')
+				const $infoSuccess          = document.querySelector('.js-product-info-success')
 				const $inputEmail           = document.querySelector('.js-product-input-email')
 				const $inputName            = document.querySelector('.js-product-input-name')
-				const $infoSuccess          = document.querySelector('.js-product-info-success')
-				const $infoError            = document.querySelector('.js-product-info-error')
-				// const $submit               = document.querySelector('.js-product-submit')
-
-				const form          = document.querySelector('.js-product-form')
-				// const responseDiv   = document.querySelector('.js-response')
+				const $loading              = document.querySelector('.js-product-info-loading')
+				const form                  = document.querySelector('.js-product-form')
 
 				form.addEventListener('submit', function (e) {
 					e.preventDefault()
@@ -63,6 +61,8 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 						return
 					}
 
+					$loading.classList.add('active')
+
 					const formData = new FormData(form)
 
 					fetch('https://tatyanavoilokova.com/wp-content/themes/tv2023/template-parts/contact_form.php', {
@@ -70,11 +70,18 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 						body: formData
 					})
 						.then(response => response.text())
+						// success
 						.then(data => {
-							console.log('data | ', data)
-							// responseDiv.textContent = data
+							$loading.classList.remove('active')
+
+							if (data === 'success') {
+								$infoSuccess.classList.add('active')
+							}
 						})
+						// error
 						.catch(error => {
+							$loading.classList.remove('active')
+
 							console.error('Error:', error)
 						})
 				})

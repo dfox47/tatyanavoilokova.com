@@ -1,6 +1,7 @@
 <?php if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 //	$to = 'dfox@foxartbox.com';
-	$to = 'info@tatyanavoilokova.com';
+	$to = 'a9942212@gmail.com';
+//	$to = 'info@tatyanavoilokova.com';
 
 	$subject    = '[tatyanavoilokova.com] Product order';
 	$userName   = $_POST['user-name'];
@@ -19,9 +20,9 @@
 		'Content-Type: text/html; charset=UTF-8';
 
 	if (mail($to, $subject, $message, $headers)) {
-		echo 'Email sent successfully.';
+		echo 'success';
 	}
 	else {
-		echo 'Email could not be sent.';
+		echo 'error';
 	}
-} ?>
+}

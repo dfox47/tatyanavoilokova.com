@@ -74,7 +74,8 @@ $price              = $product->get_price(); ?>
 				<input type="hidden" name="product-link" value="<?= 'https://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']; ?>">
 
 				<div class="contact_form__info contact_form__info--error js-product-info-error">Please, fill all the fields</div>
-				<div class="contact_form__info js-product-info-success">Thank you for you message!</div>
+				<div class="contact_form__info contact_form__info--loading js-product-info-loading"><div class="loading"><span></span></div></div>
+				<div class="contact_form__info js-product-info-success">Awesome!<br>I will contact you shortly.</div>
 			</form>
 		</div>
 	</div>
