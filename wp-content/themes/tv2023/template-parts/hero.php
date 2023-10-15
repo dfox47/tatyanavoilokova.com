@@ -1,5 +1,7 @@
 <div class="hero js-hero">
+	<div class="hero__alice"></div>
 	<div class="hero__bg"></div>
+	<div class="hero__boat"></div>
 
 	<div class="hero__content">
 		<div class="hero__title">

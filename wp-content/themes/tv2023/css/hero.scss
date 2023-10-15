@@ -11,14 +11,42 @@
 	width: 100%;
 	z-index: 3;
 
+	&__alice {
+		background: url(/wp-content/uploads/2023/10/alice.png) center center no-repeat scroll transparent;
+		background-size: contain;
+		bottom: 8vw;
+		height: 10vw;
+		left: 50%;
+		margin-left: -5vw;
+		position: absolute;
+		transform-style: preserve-3d;
+		transform: rotateX(var(--move-y)) rotateY(var(--move-x)) translateZ(120px);
+		width: 10vw;
+		z-index: 2;
+	}
+
 	&__bg {
-		background: url(/wp-content/uploads/2023/09/1-scaled.jpg) center center no-repeat scroll transparent;
+		background: url(/wp-content/uploads/2023/10/bg.png) center center no-repeat scroll transparent;
 		background-size: cover;
 		inset: -5vw;
 		position: absolute;
 		transform-style: preserve-3d;
 		transform: rotateX(var(--move-y)) rotateY(var(--move-x));
 		z-index: 1;
+	}
+
+	&__boat {
+		background: url(/wp-content/uploads/2023/10/boat.png) center center no-repeat scroll transparent;
+		background-size: contain;
+		height: 20vw;
+		left: 50%;
+		margin-left: -10vw;
+		position: absolute;
+		top: 0;
+		transform-style: preserve-3d;
+		transform: rotateX(var(--move-y)) rotateY(var(--move-x)) translateZ(80px);
+		width: 20vw;
+		z-index: 2;
 	}
 
 	&__content {
