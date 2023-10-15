@@ -26,6 +26,9 @@ const bubblesGenerator = (placeTo, interval, bubbleWidth) => {
 		bubble.addEventListener('click', (e) => {
 			e.target.remove()
 
+			// do not make anything on full screen bubbles
+			if (document.querySelector('.js-hero-bubbles').classList.contains('active')) return
+
 			bubbleClicks++
 
 			if (bubbleClicks > 1) {
