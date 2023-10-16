@@ -1,6 +1,7 @@
 .hero {
 	align-items: center;
-	background: $c_text;
+	//background-color: $c_text;
+	background-color: #fff;
 	color: #fff;
 	display: flex;
 	height: 100vh;
@@ -44,7 +45,7 @@
 		position: absolute;
 		top: 0;
 		transform-style: preserve-3d;
-		transform: rotateX(var(--move-y)) rotateY(var(--move-x)) translateZ(80px);
+		transform: rotateX(var(--move-y)) rotateY(var(--move-x)) translateZ(80px) scale(.8);
 		width: 20vw;
 		z-index: 2;
 	}
@@ -65,14 +66,44 @@
 	}
 
 	&__title {
-		font-size: calc(var(--index) * 3.5);
+		font-size: calc(var(--index) * 4.5);
+		position: relative;
 		text-align: center;
 		text-transform: uppercase;
-		text-shadow: 0 0 5px $c_text;
+	}
+
+	&__title_bg {
+		animation: waterEffect 4s ease-in-out infinite;
+		color: $c_main;
+		left: 50%;
+		position: absolute;
+		top: 0;
+		transform: translateX(-50%);
+		z-index: 1;
+	}
+
+	&__title_text {
+		color: transparent;
+		-webkit-text-stroke: 2px #fff;
+		position: relative;
+		z-index: 2;
+
+		&--full {
+			color: $c_main;
+		}
 	}
 
 	@media #{$tablet} {
 		height: 700px;
+	}
+}
+
+@keyframes waterEffect {
+	0%, 100% {
+		clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+	}
+	50% {
+		clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
 	}
 }
 
