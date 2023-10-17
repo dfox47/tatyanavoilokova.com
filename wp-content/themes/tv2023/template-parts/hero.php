@@ -1,4 +1,4 @@
-<div class="hero js-hero">
+<div class="hero js-hero" style="--move-x: -1deg; --move-y: -1deg;">
 	<div class="hero__alice"></div>
 	<div class="hero__bg"></div>
 	<div class="hero__boat"></div>
