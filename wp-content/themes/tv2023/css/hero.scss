@@ -1,11 +1,20 @@
+@keyframes waterEffect {
+	0%, 100% {
+		clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
+	}
+	50% {
+		clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
+	}
+}
+
 .hero {
 	align-items: center;
-	//background-color: $c_text;
-	background-color: #fff;
+	background-color: $c_text;
 	color: #fff;
 	display: flex;
 	height: 100vh;
 	justify-content: center;
+	min-height: 700px;
 	overflow: hidden;
 	perspective: 1000px;
 	position: relative;
@@ -15,14 +24,14 @@
 	&__alice {
 		background: url(/wp-content/uploads/2023/10/alice.png) center center no-repeat scroll transparent;
 		background-size: contain;
-		bottom: 8vw;
-		height: 10vw;
+		height: calc(var(--index) * 20);
 		left: 50%;
-		margin-left: -5vw;
+		margin-left: calc(var(--index) * -10);
 		position: absolute;
+		top: 50%;
 		transform-style: preserve-3d;
-		transform: rotateX(var(--move-y)) rotateY(var(--move-x)) translateZ(120px);
-		width: 10vw;
+		transform: rotateX(var(--move-y)) rotateY(var(--move-x)) translateY(12%) translateZ(120px) scale(.7);
+		width: calc(var(--index) * 20);
 		z-index: 2;
 	}
 
@@ -39,14 +48,14 @@
 	&__boat {
 		background: url(/wp-content/uploads/2023/10/boat.png) center center no-repeat scroll transparent;
 		background-size: contain;
-		height: 20vw;
+		height: calc(var(--index) * 14);
 		left: 50%;
-		margin-left: -10vw;
+		margin-left: calc(var(--index) * -7);
 		position: absolute;
-		top: 0;
+		top: 50%;
 		transform-style: preserve-3d;
-		transform: rotateX(var(--move-y)) rotateY(var(--move-x)) translateZ(80px) scale(.8);
-		width: 20vw;
+		transform: rotateX(var(--move-y)) rotateY(var(--move-x)) translateY(-110%) translateZ(80px) scale(.9);
+		width: calc(var(--index) * 14);
 		z-index: 2;
 	}
 
@@ -74,7 +83,7 @@
 
 	&__title_bg {
 		animation: waterEffect 4s ease-in-out infinite;
-		color: $c_main;
+		color: #fff;
 		left: 50%;
 		position: absolute;
 		top: 0;
@@ -89,21 +98,12 @@
 		z-index: 2;
 
 		&--full {
-			color: $c_main;
+			color: #fff;
 		}
 	}
 
 	@media #{$tablet} {
 		height: 700px;
-	}
-}
-
-@keyframes waterEffect {
-	0%, 100% {
-		clip-path: polygon(0% 45%, 15% 44%, 32% 50%, 54% 60%, 70% 61%, 84% 59%, 100% 52%, 100% 100%, 0% 100%);
-	}
-	50% {
-		clip-path: polygon(0% 60%, 16% 65%, 34% 66%, 51% 62%, 67% 50%, 84% 45%, 100% 46%, 100% 100%, 0% 100%);
 	}
 }
 
