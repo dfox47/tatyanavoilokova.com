@@ -1,6 +1,6 @@
 // custom.js [START]
 // for jQuery scripts
-$(document).ready(function () {
+jQuery(document).ready(function($) {
 	// default owl carousel
 	$('.js-owl-carousel').owlCarousel({
 		autoplay:           true,

@@ -1,6 +1,10 @@
 const imgScroll = () => {
 	document.querySelectorAll('.js-img-scroll').forEach((e) => {
-		if (window.pageYOffset + window.innerHeight > e.getBoundingClientRect().top) {
+		// console.log('pageYOffset | ', window.pageYOffset)
+		// console.log('innerHeight | ', window.innerHeight)
+		// console.log('e.getBoundingClientRect().top | ', e.getBoundingClientRect().top)
+
+		if (window.pageYOffset + window.innerHeight > e.getBoundingClientRect().top && e.getBoundingClientRect().top > 0) {
 			e.classList.remove('js-img-scroll')
 
 			// create img element
