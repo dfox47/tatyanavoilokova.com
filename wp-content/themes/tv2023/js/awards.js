@@ -3,9 +3,8 @@ const $allPopups        = document.querySelectorAll('.js-popup')
 const $awardsCarousel   = document.querySelector('.js-awards-carousel')
 const $popupImg         = document.querySelector('.js-popup-img')
 
-// example of HTML | <button class="js-awards-carousel-item" data-popup="img"></button
 $awardsCarousel.addEventListener('click', function(e) {
-	if (e.target.classList.contains('js-awards-carousel-img')) {
+	if (e.target.classList.contains('js-awards-carousel-item')) {
 		$allPopups.forEach((popup) => {
 			// hide all other popups
 			popup.classList.remove('active')
@@ -22,5 +21,21 @@ $awardsCarousel.addEventListener('click', function(e) {
 			}
 		})
 	}
+})
+
+$(document).ready(function () {
+	$('.js-awards-carousel').owlCarousel({
+		items:          4,
+		loop:           true,
+		margin:         20,
+		nav:            true,
+		navText:        ['', ''],
+		responsive:{
+			0:   {items: 1},
+			400: {items: 2},
+			600: {items: 3},
+			800: {items: 4}
+		}
+	})
 })
 // awards.js [END]

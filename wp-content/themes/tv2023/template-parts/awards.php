@@ -9,7 +9,7 @@
 	<div class="awards_carousel owl-carousel js-awards-carousel">
 		<?php for($i = 1; $i<=8; $i++) { ?>
 			<div class="awards_carousel__link js-awards-carousel-item" data-src="/wp-content/themes/tv2023/i/awards/<?= $i; ?>.jpg">
-				<span class="awards_carousel__img js-img-scroll js-awards-carousel-img" data-src="/wp-content/themes/tv2023/i/awards/<?= $i; ?>s.jpg"></span>
+				<span class="awards_carousel__img js-img-scroll" data-src="/wp-content/themes/tv2023/i/awards/<?= $i; ?>s.jpg"></span>
 			</div>
 		<?php } ?>
 	</div>
