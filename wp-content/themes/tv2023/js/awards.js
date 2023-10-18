@@ -14,11 +14,11 @@ $awardsCarousel.addEventListener('click', function(e) {
 			if (popup.dataset.popup === 'img') {
 				popup.classList.add('active')
 
-				const $popupImgToPut = e.target.closest('.js-awards-carousel-item').querySelector('.js-popup-img-put')
+				const $popupImgSrc = e.target.closest('.js-awards-carousel-item').dataset.src
 
-				if ($popupImgToPut == null) return
+				if ($popupImgSrc == null) return
 
-				$popupImg.innerHTML = $popupImgToPut.innerHTML
+				$popupImg.innerHTML = '<img class="awards_img js-img-ratio" src="' + $popupImgSrc + '" data-ratio="vertical" alt="">'
 			}
 		})
 	}
