@@ -22,10 +22,10 @@ $i = esc_url(get_template_directory_uri()) . '/i'; ?>
 <?php // popup
 include "template-parts/popups.php"; ?>
 
+<?php wp_footer(); ?>
+
 <?php // all scripts in one file with GULP ?>
 <script src="<?= esc_url(get_template_directory_uri()); ?>/all.min.js?v<?= (date("Ymd")); ?>"></script>
-
-<?php wp_footer(); ?>
 
 </body>
 </html>
