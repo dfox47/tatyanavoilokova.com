@@ -10,11 +10,15 @@ $awardsCarousel.addEventListener('click', function(e) {
 
 		// show selected popup
 		if (popup.dataset.popup === 'img') {
-			popup.classList.add('active')
+			const $popupItem = e.target.closest('.js-awards-carousel-item')
 
-			const $popupImgSrc = e.target.closest('.js-awards-carousel-item').dataset.src
+			if ($popupItem == null) return
+
+			const $popupImgSrc = $popupItem.dataset.src
 
 			if ($popupImgSrc == null) return
+
+			popup.classList.add('active')
 
 			$popupImg.innerHTML = '<img class="awards_img js-img-ratio" src="' + $popupImgSrc + '" data-ratio="vertical" alt="">'
 		}

@@ -119,8 +119,4 @@ document.querySelectorAll('.js-product-home-more').forEach((link) => {
 			})
 	})
 })
-
-
-
-
 // product [END]

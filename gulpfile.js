@@ -71,11 +71,12 @@ gulp.task('js_copy', function () {
 
 gulp.task('js', function () {
 	return gulp.src([
+			localJs + 'jquery-3.7.1.min.js',
 			localJs + 'owl.carousel.min.js',
 			localJs + '**/*.js'
 		])
 		.pipe(concat('all.js'))
-		.pipe(uglify())
+		// .pipe(uglify())
 		.pipe(rename({
 			suffix: ".min"
 		}))
