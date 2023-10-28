@@ -17,6 +17,10 @@ $i = esc_url(get_template_directory_uri()) . '/i'; ?>
 
 	<?php // copyright
 	include "template-parts/copyright.php"; ?>
+
+	<div class="powered_by">
+		powered by <a class="powered_by__link" href="//foxartbox.com" target="_blank">FOXARTBOX <span class="powered_by__img js-img-scroll" data-src="/wp-content/themes/tv2023/i/icons/foxartbox.svg"></span></a>
+	</div>
 </footer>
 
 <?php // popup
