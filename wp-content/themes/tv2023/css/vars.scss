@@ -20,6 +20,7 @@ $c_text: #22235f;
 $border_radius: 8px;
 
 $transition: all .3s ease-in-out;
+$transition_cubic: cubic-bezier(.1, .7, 0, 1);
 
 // @medias
 $desktop: 'only screen and (max-width: 1279px)';

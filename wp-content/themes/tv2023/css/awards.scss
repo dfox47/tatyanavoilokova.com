@@ -1,4 +1,5 @@
-.awards {}
+.awards {
+}
 
 .awards_carousel {
 	margin: 0 auto;
@@ -105,5 +106,93 @@
 	&[data-ratio="horizontal"] {
 		height: auto;
 		width: 100%;
+	}
+}
+
+.awards_list {
+	align-items: center;
+	display: flex;
+	gap: .2rem;
+	justify-content: center;
+	padding: 100px 0;
+	perspective: calc(#{$index} * 35);
+	width: 100%;
+
+	&__img {
+		background-position: center;
+		background-size: cover;
+		cursor: pointer;
+		display: block;
+		filter: grayscale(100%) brightness(.5);
+		height: calc(#{$index} * 10);
+		object-fit: cover;
+		transition: 1.3s transform $transition_cubic, filter 3s $transition_cubic, width 1.3s $transition_cubic;
+		width: calc(#{$index} * 4);
+		will-change: transform, filter;
+
+		&::after,
+		&::before {
+			content: "";
+			height: 100%;
+			position: absolute;
+			width: calc(#{$index} * 2);
+		}
+
+		&::after {
+			left: calc(#{$index} * -1);
+		}
+
+		&::before {
+			right: calc(#{$index} * -1);
+		}
+
+		&:has(+ :hover) {
+			filter: inherit;
+			transform: translateZ(calc(#{$index} * 8.5)) rotateY(-35deg);
+		}
+
+		&:has(+ * + :hover) {
+			filter: inherit;
+			transform: translateZ(calc(#{$index} * 5.6)) rotateY(-40deg);
+		}
+
+		&:has(+ * + * + :hover) {
+			filter: inherit;
+			transform: translateZ(calc(#{$index} * 2.4)) rotateY(-30deg);
+		}
+
+		&:has(+ * + * + * + :hover) {
+			filter: inherit;
+			transform: translateZ(calc(#{$index} * .6)) rotateY(-14deg);
+		}
+
+		&:hover {
+			filter: inherit;
+			transform: translateZ(calc(#{$index} * 10));
+
+			+ * {
+				filter: inherit;
+				transform: translateZ(calc(#{$index} * 8.5)) rotateY(35deg);
+				z-index: -1;
+
+				+ * {
+					filter: inherit;
+					transform: translateZ(calc(#{$index} * 5.6)) rotateY(40deg);
+					z-index: -2;
+
+					+ * {
+						filter: inherit;
+						transform: translateZ(calc(#{$index} * 2.4)) rotateY(30deg);
+						z-index: -3;
+
+						+ * {
+							filter: inherit;
+							transform: translateZ(calc(#{$index} * .6)) rotateY(14deg);
+							z-index: -4;
+						}
+					}
+				}
+			}
+		}
 	}
 }
